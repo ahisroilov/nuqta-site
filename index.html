@@ -4,176 +4,627 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nuqta - one thing, full focus</title>
-  <meta name="description" content="Nuqta is a calm desktop app for doing one thing at a time: a focus notch, a task calendar, steps and notes, a focus map, streaks and restful breaks.">
+  <meta name="description" content="Nuqta is a calm Windows app for doing one thing at a time: a notch at the top of your screen, a keyboard-first Command bar, a task calendar, an automatic focus score, breaks, streaks and medals. $4.99 once.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nuqta - one thing, full focus">
+  <meta property="og:description" content="A calm focus app for Windows. One task, one timer, no noise. $4.99 once, no subscription.">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#000000">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="preload" href="fonts/fraunces-latin-soft-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="wrap top">
-    <a class="brand" href="./"><img src="icon.svg" alt="" width="28" height="28"> Nuqta</a>
-    <nav><a href="#features">Features</a><a href="privacy.html">Privacy</a></nav>
-  </header>
 
-  <main>
-    <section class="wrap hero">
-      <p class="eyebrow">For Windows</p>
-      <h1>Do one thing at a time - and finish it.</h1>
-      <p class="lead">Nuqta is a calm desktop app for focused work. One task, one timer, no noise. It waits in your tray and sits at the top of your screen while you work.</p>
+<header class="nav">
+  <div class="wide">
+    <a class="brand" href="./"><img src="icon.svg" alt="" width="24" height="24"> Nuqta</a>
+    <nav class="nav-links" aria-label="Main">
+      <a class="hide-sm" href="#notch">Overview</a>
+      <a class="hide-sm" href="#hub">Features</a>
+      <a class="hide-sm" href="guide.html">Guide</a>
+      <a class="hide-sm" href="changelog.html">Changelog</a>
+      <a href="#pricing">Pricing</a>
+      <!-- TODO: the Polar checkout link once the product exists. -->
+      <a class="nav-buy" href="#pricing">Buy</a>
+    </nav>
+  </div>
+</header>
 
-      <!-- Hero preview: a screen with the notch and the command bar -->
-      <div class="screen" aria-hidden="true">
-        <div class="notch">
-          <span class="ndot"></span><span class="ntitle">Write the quarterly report</span><b>38:12</b>
-          <span class="nline"><i style="width:62%"></i></span>
+<main>
+
+<!-- ============================================================ HERO -->
+<section class="dark hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow">Nuqta for Windows</p>
+    <h1 class="h-hero grad">One thing.<br>Full focus.</h1>
+    <p class="lead center" style="max-width:30em;margin-left:auto;margin-right:auto">Nuqta is a calm desktop app for doing one thing at a time. It waits in your tray, lives in a small notch at the top of your screen, and is one shortcut away from any app.</p>
+    <div class="ctas">
+      <!-- TODO: the Polar checkout link once the product exists. -->
+      <a class="btn" href="#pricing">Buy Nuqta - $4.99</a>
+      <a class="btn ghost" href="#notch">See how it works</a>
+    </div>
+    <p class="meaning">One payment. No subscription, no account, no notifications.</p>
+  </div>
+
+  <div class="scene reveal">
+    <div class="fit" data-w="1440" data-h="860" data-crop="760" role="img" aria-label="A Windows desktop with Nuqta's notch at the top of the screen showing the task in focus and a timer, and the Command bar open in the middle with today's tasks in time order.">
+      <div class="mock desk" aria-hidden="true">
+        <div class="wall"></div>
+        <div class="doc">
+          <div class="bar"><i></i><i></i><i></i><span>Quarterly report - Draft 3</span></div>
+          <div class="page">
+            <h6>Q3 report</h6>
+            <p>Draft for the team · 4 pages</p>
+            <div class="ln" style="width:92%"></div><div class="ln" style="width:86%"></div><div class="ln" style="width:95%"></div><div class="ln" style="width:58%"></div>
+            <div class="ln" style="width:0;margin-bottom:26px"></div>
+            <div class="ln" style="width:88%"></div><div class="ln" style="width:93%"></div><div class="ln" style="width:81%"></div><div class="ln" style="width:90%"></div><div class="ln" style="width:44%"></div>
+            <div class="ln" style="width:0;margin-bottom:26px"></div>
+            <div class="ln" style="width:91%"></div><div class="ln" style="width:85%"></div><div class="ln" style="width:70%"></div>
+          </div>
         </div>
-        <div class="cmd">
-          <div class="cmd-input"><span class="adot"></span><span class="typed">Plan next week</span><span class="caret"></span></div>
-          <div class="cmd-row sel"><span class="rdot"></span>Reply to the design notes<span class="chip">25m</span><span class="enter">↵</span></div>
-          <div class="cmd-row"><span class="rdot"></span>Review pull request #42<span class="chip">45m</span></div>
-          <div class="cmd-row"><span class="rdot"></span>Call the bank</div>
-          <div class="cmd-foot"><kbd>↑↓</kbd> Select <kbd>↵</kbd> Start <kbd>Ctrl ↵</kbd> Add and start <kbd>Ctrl D</kbd> Done</div>
+        <div class="side"><div class="ln" style="width:40%"></div><div class="ln" style="width:80%"></div><div class="ln" style="width:65%"></div><div class="ln" style="width:72%"></div></div>
+        <div class="notch live">
+          <span class="nd"></span><span class="nt">Write the quarterly report</span><span class="ntime" data-timer="21:12">21:12</span>
+          <span class="nline"><i style="width:42%"></i></span>
+        </div>
+        <div class="cbar">
+          <div class="cb-in"><span class="adot"></span><span class="ph">Add to the queue, or pick what is next</span><span class="typed" data-typer></span><span class="caret"></span></div>
+          <div class="cb-tokens"></div>
+          <div class="cb-line"></div>
+          <div class="cb-now"><span class="dot"></span>Write the quarterly report<span class="done">Done</span></div>
+          <div class="cb-row sel"><span class="tm">16:30</span><span class="ring"></span><span class="ttl">Prepare the workshop slides</span><span class="meta">· 1/3 steps</span><span class="chip">45m</span><span class="ent">↵</span></div>
+          <div class="cb-row ev"><span class="tm">17:00</span><span class="ebar"></span><span class="ttl">Team sync</span></div>
+          <div class="cb-row"><span class="tm">18:30</span><span class="ring"></span><span class="ttl">Gym</span><span data-rep></span><span class="chip">1h</span></div>
+          <div class="cb-group">Any time</div>
+          <div class="cb-row"><span class="tm"></span><span class="ring"></span><span class="ttl">Send invoice to client</span><span class="late">Thu 19</span><span class="chip">15m</span></div>
+          <div class="cb-foot"><span><b class="kbd">↑↓</b>Select</span><span><b class="kbd">↵</b>Start</span><span><b class="kbd">Ctrl ↵</b>Add and start</span><span><b class="kbd">Ctrl D</b>Done</span></div>
+        </div>
+        <div class="tb"><i></i><i></i><i class="a"></i><i></i><i></i></div>
+        <div class="tray"><span class="tg"><b></b><b></b><b></b></span><span>15:10<br>20.11.2026</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ NOTCH -->
+<section id="notch" class="dark sec">
+  <div class="wide">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The notch</p>
+      <h2 class="h-xl">Always there.<br><span class="muted">Never in the way.</span></h2>
+      <p class="lead">A small dark notch sits flush with the top edge of your screen. It shows the one task you are on and how long you have been at it. It never takes the keyboard, never pops up, and clicks pass straight through it to the app below.</p>
+    </div>
+    <div class="notch-row">
+      <div class="notch-cell reveal">
+        <div class="stagebar"><span class="notch live"><span class="nd"></span><span class="nt">Write the quarterly report</span><span class="ntime">38:12</span><span class="nline"><i style="width:62%"></i></span></span></div>
+        <h4>In focus</h4><p>The task, the time in this session, and a thin line that fills as the session runs.</p>
+      </div>
+      <div class="notch-cell w2 reveal">
+        <div class="stagebar"><span class="notch open"><span class="nd"></span><span class="nt">Write the quarterly report<small>Next: Draft the summary page</small></span><span class="ntime">38:12</span>
+          <span class="nb" title="Pause"><svg viewBox="0 0 16 16"><rect x="4" y="3" width="3" height="10" rx="1.5"/><rect x="9" y="3" width="3" height="10" rx="1.5"/></svg></span>
+          <span class="nb acc" title="Done"><svg viewBox="0 0 16 16"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="nb" title="Hide"><svg viewBox="0 0 16 16"><rect x="3" y="7" width="10" height="2.4" rx="1.2"/></svg></span>
+          <span class="nline"><i style="width:62%"></i></span></span></div>
+        <h4>Hover to act</h4><p>Point at it and it opens into one smooth island: pause, mark done, or hide it. When the task has steps, the next one shows under its title.</p>
+      </div>
+      <div class="notch-cell reveal">
+        <div class="stagebar"><span class="notch paused"><span class="nd"></span><span class="nt">Paused · Write the report</span><span class="ntime">12:40</span><span class="nline"><i style="width:30%"></i></span></span></div>
+        <h4>Paused for you</h4><p>Lock the PC, let it sleep, or step away for five minutes, and the session pauses by itself.</p>
+      </div>
+      <div class="notch-cell reveal">
+        <div class="stagebar"><span class="notch over"><span class="nd"></span><span class="nt">Fix the sync bug</span><span class="ntime">+04:10</span><span class="nline"><i></i></span></span></div>
+        <h4>Over the timebox</h4><p>Gave it 45 minutes? Past that, the time turns amber. No sound, no popup.</p>
+      </div>
+      <div class="notch-cell reveal">
+        <div class="stagebar"><span class="notch"><span class="nlabel">Next</span><span class="nt">Reply to design notes</span><span class="nbtn"><svg viewBox="0 0 10 10"><path d="M3 1.8v6.4L8.2 5z"/></svg></span></span></div>
+        <h4>Between tasks</h4><p>With nothing in focus it shows what is next today, or asks "What's the one thing?"</p>
+      </div>
+      <div class="notch-cell w2 reveal">
+        <div class="stagebar"><span class="notch"><span class="nd" style="background:#5bc898;box-shadow:0 0 8px #5bc89888"></span><span class="nt">Day done · 4h 10m</span></span></div>
+        <h4>A quiet end to the day</h4><p>After 18:00, once you have focused, it says "Day done" with your total. A click opens today in the Task hub for a short look back. It only changes its text; it never opens a window on its own.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ COMMAND BAR -->
+<section id="command" class="sec">
+  <div class="wide split">
+    <div class="reveal">
+      <p class="eyebrow">The Command bar</p>
+      <h2 class="h-lg">One shortcut.<br>From any app.</h2>
+      <p class="lead">Press <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Space</kbd>. The bar appears in about 25 milliseconds, already showing today in time order. Type a task, press Enter, and it is planned for today. Press Enter on a row to start it.</p>
+      <ul class="facts">
+        <li><b>Timebox as you type.</b> End with <kbd>~45m</kbd> and the task gets a 45-minute timebox.</li>
+        <li><b>Repeats in plain words.</b> End with "every mon wed fri", "weekdays" or "every 3 days".</li>
+        <li><b>Tab sends it to the Inbox</b> instead of today, for things without a day yet.</li>
+        <li><b>Keys you typed are never lost.</b> Start typing the moment you press the shortcut; Nuqta replays every key into the bar, in order.</li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <div class="fit" data-w="640" data-h="520" role="img" aria-label="The Command bar with a task being typed, chips under it for 45 minutes and a repeat on Monday, Wednesday and Friday, and today's tasks below.">
+        <div class="mock cbar" aria-hidden="true">
+          <div class="cb-in"><span class="adot"></span><span class="typed">Gym ~45m every mon wed fri</span><span class="caret" style="margin-left:-10px"></span></div>
+          <div class="cb-tokens on"><span class="chip">45 min</span><span class="chip acc"><span data-rep></span>Mon Wed Fri</span></div>
+          <div class="cb-line"></div>
+          <div class="cb-row"><span class="tm">09:00</span><span class="ring"></span><span class="ttl">Morning review</span><span data-rep></span><span class="chip">15m</span></div>
+          <div class="cb-row ev"><span class="tm">11:30</span><span class="ebar"></span><span class="ttl">Product sync</span></div>
+          <div class="cb-row sel"><span class="tm">16:30</span><span class="ring"></span><span class="ttl">Prepare the workshop slides</span><span class="meta">· 1/3 steps</span><span class="chip">45m</span></div>
+          <div class="cb-group">Any time</div>
+          <div class="cb-row"><span class="tm"></span><span class="ring"></span><span class="ttl">Send invoice to client</span><span class="late">Thu 19</span><span class="chip">15m</span></div>
+          <div class="cb-foot"><span><b class="kbd">↵</b>Add</span><span><b class="kbd">Ctrl ↵</b>Add and start</span><span><b class="kbd">Tab</b>To Inbox</span></div>
         </div>
       </div>
-      <p class="hint">Press <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Space</kbd> from any app. Name it. Start.</p>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="wrap ideas">
-      <p class="eyebrow">One purpose</p>
-      <h2>Built for a single thing: finishing what you started.</h2>
-      <div class="idea-grid">
-        <div><span class="inum">1</span><h3>One task at a time</h3><p>Only one task can be in focus. Everything else waits quietly until you are done.</p></div>
-        <div><span class="inum">2</span><h3>Nothing to fill in</h3><p>No forms, no ratings, no setup. Nuqta measures your focus by itself.</p></div>
-        <div><span class="inum">3</span><h3>No noise</h3><p>No notifications, no badges, no account. It stays out of the way until you need it.</p></div>
+<!-- ============================================================ ONE TASK -->
+<section class="dark sec">
+  <div class="wide split flip">
+    <div class="reveal">
+      <p class="eyebrow">The one rule</p>
+      <h2 class="h-lg">One task in focus.<br><span class="muted">Really one.</span></h2>
+      <p class="lead">Only one task can be in focus at a time - the database itself refuses a second. Starting something else first asks a simple question about the task you are leaving, so nothing is ever left half-open.</p>
+      <ul class="facts">
+        <li><b>Done</b> marks it finished. <b>Not finished yet</b> puts it back on your list. <b>No longer needed</b> drops it.</li>
+        <li>Dropped tasks are never hidden. They stay on the calendar, dashed or struck through, as an honest record.</li>
+        <li>Answer with one key: <kbd>D</kbd> <kbd>L</kbd> <kbd>X</kbd>, or <kbd>Esc</kbd> to keep working.</li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <div class="fit" data-w="640" data-h="500" role="img" aria-label="The switch prompt: Switch tasks? Now: Write the quarterly report, 23 minutes in focus. Next: Reply to design notes. The current task is: Done, Not finished yet, or No longer needed.">
+        <div class="mock cbar" aria-hidden="true" style="padding:0">
+          <div class="sw">
+            <h4>Switch tasks?</h4>
+            <div class="sw-cards">
+              <div class="sw-card"><span class="pring"></span><div><small>Now · 23m in focus</small><b>Write the quarterly report</b></div></div>
+              <span class="sw-arrow">→</span>
+              <div class="sw-card"><span class="pplay"><svg viewBox="0 0 10 10"><path d="M2 1v8l7-4z"/></svg></span><div><small>Next</small><b>Reply to design notes</b></div></div>
+            </div>
+            <p>The current task is…</p>
+            <div class="sw-opt sel"><span class="k">D</span><div><b>Done</b><small>Mark it finished</small></div></div>
+            <div class="sw-opt"><span class="k">L</span><div><b>Not finished yet</b><small>Back to your list, continue later</small></div></div>
+            <div class="sw-opt"><span class="k">X</span><div><b>No longer needed</b><small>Drop it from your list</small></div></div>
+            <div class="sw-keep"><span>Keep working on it</span><b class="kbd">Esc</b></div>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section id="features" class="wrap features">
-      <article class="feat">
-        <div class="copy">
-          <p class="eyebrow">Task hub</p>
-          <h2>Plan your days, simply.</h2>
-          <p>An inbox that keeps overdue work in view, and a day, week and month calendar. Drop a task on a day; finished work stays there as quiet proof of progress.</p>
-        </div>
-        <div class="shot" aria-hidden="true">
-          <div class="win hub">
-            <div class="inbox">
-              <p class="d-title sm">Inbox</p>
-              <small class="grp warn">OVERDUE</small>
-              <div class="it"><span class="rdot"></span><div>Call the bank<small>Yesterday</small></div></div>
-              <small class="grp">INBOX</small>
-              <div class="it"><span class="rdot"></span><div>Read the paper<small>~45m</small></div></div>
-              <div class="it"><span class="rdot"></span><div>Plan trip</div></div>
+<!-- ============================================================ HUB -->
+<section id="hub" class="sec">
+  <div class="wide">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The Task hub</p>
+      <h2 class="h-xl">Plan the week.<br><span class="muted">Live the day.</span></h2>
+      <p class="lead">An Inbox for everything without a day, and a calendar by day, week or month. Drag a task onto a time and it snaps to 15 minutes. Every focus session you finish stays on the calendar as quiet proof of the work.</p>
+    </div>
+    <div class="reveal">
+      <div class="fit" data-w="1200" data-h="800" role="img" aria-label="The Task hub week view: an Inbox with one overdue task and three tasks without a day, and a week calendar with finished focus sessions, Google Calendar events in green, planned tasks with outlines, the task in focus right now and the current time line.">
+        <div class="mock win hub" aria-hidden="true">
+          <aside class="hub-side">
+            <div class="hub-logo"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="nav-it on"><svg viewBox="0 0 20 20"><path d="M7 5h10M7 10h10M7 15h10M3 5h.5M3 10h.5M3 15h.5"/></svg>Tasks</div>
+            <div class="nav-it"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7"/><circle cx="10" cy="10" r="2.5"/></svg>Focus</div>
+            <div class="nav-it"><svg viewBox="0 0 20 20"><circle cx="5" cy="6" r="1.4"/><circle cx="11" cy="6" r="1.4"/><circle cx="8" cy="11" r="1.4"/><circle cx="14" cy="14" r="1.4"/></svg>Settings</div>
+            <div class="hub-chip"><img src="img/medals/medal-14.svg" alt="">16 days</div>
+          </aside>
+          <div class="hub-main">
+            <div class="hub-top"><h5>Tasks</h5><span class="circ">‹</span><span class="circ">›</span><span class="hub-date">Nov 16 - 22, 2026</span><div class="seg"><span>Day</span><span class="on">Week</span><span>Month</span></div><div class="caps"><span>–</span><span>✕</span></div></div>
+            <div class="hub-sum">15 done · 12h 11m focus this week</div>
+            <div class="hub-body">
+              <div class="card inbox">
+                <h6>Inbox <span>4</span></h6>
+                <div class="ib-add"><i>+</i>Add a task</div>
+                <div class="ib-grp warn">OVERDUE · 1</div>
+                <div class="ib-row"><span class="ring"></span><div>Send invoice to client<small><b>Yesterday</b> · ~15m</small></div></div>
+                <div class="ib-grp" style="margin-top:14px">NO DAY · 3</div>
+                <div class="ib-row"><span class="ring"></span><div>Book flights</div></div>
+                <div class="ib-row"><span class="ring"></span><div>Read the Rust async book<small>~45m</small></div></div>
+                <div class="ib-row"><span class="ring"></span><div>Renew passport<small>1/2 steps</small></div></div>
+              </div>
+              <div class="card cal" data-week></div>
             </div>
-            <div class="month">
-              <div class="m-head"><p class="d-title sm">November</p><span>12 done · 18h focus</span></div>
-              <div class="m-grid" id="month"></div>
-            </div>
           </div>
         </div>
-      </article>
-
-      <article class="feat rev">
-        <div class="copy">
-          <p class="eyebrow">Focus map</p>
-          <h2>See when you are at your sharpest.</h2>
-          <p>Every session gets an automatic score from pauses, switches and timeboxes. After two weeks Nuqta shows your deepest-focus hours.</p>
-        </div>
-        <div class="shot" aria-hidden="true">
-          <div class="win map">
-            <small class="muted-s">Your deepest focus</small>
-            <p class="d-title">Tue - Thu, 09:00 - 11:00</p>
-            <div class="heat" id="heat"></div>
-            <div class="legend">Low <i class="h1"></i><i class="h2"></i><i class="h3"></i><i class="h4"></i><i class="h5"></i> High</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="feat">
-        <div class="copy">
-          <p class="eyebrow">Streak and medals</p>
-          <h2>Small days add up.</h2>
-          <p>One real focus session a day keeps the streak going. Rest days and rest tokens forgive a missed day. Twenty medals, from bronze to royal gold.</p>
-        </div>
-        <div class="shot" aria-hidden="true">
-          <div class="win streak">
-            <img src="img/medal-14.svg" alt="" width="120" height="120">
-            <div>
-              <p class="num">14 <span>day streak</span></p>
-              <p class="muted-s">Today is counted. See you tomorrow.</p>
-              <div class="week"><i class="c">✓</i><i class="c">✓</i><i class="c">✓</i><i class="c">✓</i><i class="c t">✓</i><i></i><i class="r">z</i></div>
-            </div>
-            <img class="next" src="img/medal-30-locked.svg" alt="" width="56" height="56">
-          </div>
-        </div>
-      </article>
-
-      <article class="feat rev">
-        <div class="copy">
-          <p class="eyebrow">Breaks</p>
-          <h2>Rest that actually rests.</h2>
-          <p>When a session ends, a quiet break window invites you to look away and breathe. The next session never starts by itself - you decide when.</p>
-        </div>
-        <div class="shot" aria-hidden="true">
-          <div class="win brk">
-            <div class="brk-head"><span class="adot"></span><b>Break</b><span>7:42 left</span></div>
-            <div class="breath"><span></span></div>
-            <p class="d-title c">Rest your eyes</p>
-            <p class="muted-s c">Look at something far away for 20 seconds.</p>
-            <div class="btns"><span class="btn ghost">+5 minutes</span><span class="btn">Start next session</span></div>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <section class="wrap">
-      <div class="card note">
-        <h2>Yours, and only yours</h2>
-        <p>Everything stays on your computer. No account, no ads, no tracking, no notifications. Optional sync keeps your data in your own Google Drive, in a hidden folder only Nuqta can see - Nuqta has no server of its own.</p>
-        <a href="privacy.html">Read the privacy policy →</a>
       </div>
-    </section>
-  </main>
+    </div>
 
-  <footer class="wrap foot">
-    <span>Nuqta</span>
-    <a href="privacy.html">Privacy policy</a>
-  </footer>
+    <div class="bento" style="margin-top:20px">
+      <div class="tile s3 reveal">
+        <h3>The whole month, at a glance.</h3>
+        <p>Every day shows its focus time and its tasks as small chips: done, dropped, planned, in focus, calendar events, and the coming days of repeating tasks.</p>
+        <div class="art">
+          <div class="fit" data-w="640" data-h="520"><div class="mock card month" aria-hidden="true">
+            <div class="month-head"><b>November 2026</b><span>50 done · 43h 51m focus</span></div>
+            <div class="m-grid" data-month></div>
+          </div></div>
+        </div>
+      </div>
+      <div class="tile s3 reveal">
+        <h3>Each task, with room to think.</h3>
+        <p>Click a task and its panel opens beside the pointer: its day, time and timebox, the sessions you spent on it, small steps, and notes with clickable links.</p>
+        <div class="art">
+          <div class="fit c" data-w="420" data-h="640"><div class="mock panel" aria-hidden="true">
+            <div class="grab"></div>
+            <div class="p-head"><span class="dc"></span><b>Prepare the workshop slides</b><span>•••</span></div>
+            <div class="p-chips"><span class="chip">Today</span><span class="chip">16:30</span><span class="chip">~45m</span></div>
+            <div class="p-story">
+              <div class="lbl">FOCUS <span>32m of 45m</span></div>
+              <div class="bar8"><i style="width:71%"></i></div>
+              <div class="ses"><span>Today · 09:30</span><span class="sb" style="width:100%"></span><span>20m</span><span class="sc"><i></i><i></i><i></i><i></i><i class="o"></i></span></div>
+              <div class="ses"><span>Wed 18 · 14:00</span><span class="sb" style="width:60%"></span><span>12m</span><span class="sc"><i></i><i></i><i></i><i></i><i></i></span></div>
+            </div>
+            <div class="p-steps">
+              <div class="lbl">STEPS <span>1 of 3</span></div>
+              <div class="step done"><span class="ck"></span><span>Outline</span></div>
+              <div class="step next"><span class="ck"></span><span>Draft the slides</span><em>NEXT</em></div>
+              <div class="step"><span class="ck"></span><span>Rehearse once</span></div>
+            </div>
+            <div class="p-notes">Keep it to 10 slides. Open with a live demo, end with questions. Outline: <a>docs.example.com/workshop</a></div>
+            <div class="p-start">Start focus <span>Ctrl ↵</span></div>
+          </div></div>
+        </div>
+      </div>
+      <div class="tile s2 reveal">
+        <h3>Repeats, the calm way.</h3>
+        <p>Daily, weekdays, chosen days, a day of the month, or every few days. Only the current one exists as a task; the next appears when you finish or skip it.</p>
+        <div class="art">
+          <div class="fit c" data-w="420" data-h="380"><div class="mock card rpk" aria-hidden="true">
+            <div class="rpk-row"><span class="rd"></span>Off</div>
+            <div class="rpk-row"><span class="rd"></span>Daily</div>
+            <div class="rpk-row"><span class="rd"></span>Weekdays</div>
+            <div class="rpk-row on"><span class="rd"></span>Weekly</div>
+            <div class="rpk-days"><span class="on">Mo</span><span>Tu</span><span class="on">We</span><span>Th</span><span class="on">Fr</span><span>Sa</span><span>Su</span></div>
+            <div class="rpk-row"><span class="rd"></span>Monthly</div>
+            <div class="rpk-row"><span class="rd"></span>Every N days</div>
+          </div></div>
+        </div>
+      </div>
+      <div class="tile s2 reveal">
+        <h3>Overdue never disappears.</h3>
+        <p>A task left on a past day stays in your Inbox under Overdue and in the Command bar, with its day in amber, until you do it, move it or drop it.</p>
+        <div class="art" style="display:grid;gap:8px">
+          <div class="card" style="padding:14px 16px;display:flex;gap:12px;align-items:center"><span class="ring" style="width:15px;height:15px"></span><div style="font-size:14.5px">Send invoice to client<div style="font-size:12.5px;color:var(--warn);font-weight:600;margin-top:2px">Yesterday <span style="color:var(--text-2);font-weight:500">· ~15m</span></div></div></div>
+          <div class="card" style="padding:14px 16px;display:flex;gap:12px;align-items:center"><span class="ring" style="width:15px;height:15px"></span><div style="font-size:14.5px">Call the dentist<div style="font-size:12.5px;color:var(--warn);font-weight:600;margin-top:2px">Mon 16</div></div></div>
+        </div>
+      </div>
+      <div class="tile s2 reveal">
+        <h3>A Timeline for everything open.</h3>
+        <p>One searchable list of all your tasks, grouped by date or by status, with quick actions on every row. Press <kbd>L</kbd> in the hub.</p>
+        <div class="art" style="display:grid;gap:6px;font-size:14px">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--accent-text)">TODAY · FRI 20</div>
+          <div class="card" style="padding:12px 14px">Prepare the workshop slides<div style="font-size:12px;color:var(--text-2);margin-top:2px">16:30 - 17:15 · 1 of 3 steps · Next: Draft the slides</div></div>
+          <div class="card" style="padding:12px 14px">Gym<div style="font-size:12px;color:var(--text-2);margin-top:2px">18:30 - 19:30 · Mon Wed Fri</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script>
-    (function () {
-      // Focus map preview: weekdays x hours, a warm band Tue-Thu mornings.
-      var el = document.getElementById('heat');
-      if (el) {
-        var html = '';
-        for (var d = 0; d < 7; d++) for (var h = 0; h < 12; h++) {
-          var v = d < 5 ? 1 + ((d * 7 + h * 3) % 3) : 0;
-          if (d >= 1 && d <= 3 && h >= 2 && h <= 3) v = 5;
-          else if (d >= 1 && d <= 3 && h >= 1 && h <= 4) v = 4;
-          if (h > 9 && d < 5) v = Math.max(0, v - 2);
-          if (d === 5 && (h === 3 || h === 4)) v = 2;
-          html += '<i class="' + (v ? 'h' + v : '') + '"></i>';
-        }
-        el.innerHTML = html;
-      }
-      // Month preview: status chips per day (done / dropped past, in focus today, planned ahead).
-      var m = document.getElementById('month');
-      if (m) {
-        var out = '', today = 12, names = ['Report', 'Mail', 'Gym', 'Read', 'Plan', 'Call', 'Draft'];
-        ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].forEach(function (w) { out += '<b>' + w + '</b>'; });
-        for (var day = 3; day <= 16; day++) {
-          var c = '';
-          var n = day === today ? 2 : 1 + ((day * 5) % 3);
-          if (day % 7 === 1 || day % 7 === 2) continue;
-          for (var k = 0; k < n; k++) {
-            var cls = day < today ? (k === 1 && day % 4 === 0 ? 'dr' : 'dn') : day === today ? (k === 0 ? 'fo' : 'pl') : 'pl';
-            c += '<i class="' + cls + '">' + names[(day + k) % names.length] + '</i>';
-          }
-          out += '<div class="' + (day === today ? 'td' : day < today ? 'past' : '') + '"><span>' + day + '</span>' + c + '</div>';
-        }
-        m.innerHTML = out;
-      }
-    })();
-  </script>
+<!-- ============================================================ FOCUS SCORE -->
+<section class="sec tight" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:0">
+      <p class="eyebrow">The focus score</p>
+      <h2 class="h-lg">Measured for you.<br><span class="muted">Nothing to fill in.</span></h2>
+      <p class="lead">Every session of five minutes or more gets a score from 1 to 5 when it ends. No forms, no ratings, no AI - just four plain rules you can check yourself.</p>
+    </div>
+    <div class="rules reveal">
+      <div><b>5</b><span>Every session starts at five.</span></div>
+      <div><b>−1</b><span>If more than 10% of it was paused.</span></div>
+      <div><b>−1 each</b><span>For each time you tried to switch tasks, at most two.</span></div>
+      <div><b>−1</b><span>If you left it 20% early for another task, or ran more than 25% over the timebox. Finishing early is never punished.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FOCUS MAP -->
+<section class="dark sec">
+  <div class="wide split">
+    <div class="reveal">
+      <p class="eyebrow">The focus map</p>
+      <h2 class="h-lg">Find your<br>sharpest hours.</h2>
+      <p class="lead">Your scores, laid out by weekday and hour over the last eight weeks. After 14 days with sessions, Nuqta names your best two-hour window, so you can save hard work for it.</p>
+      <ul class="facts">
+        <li>Hours from 07:00 to 22:00, Monday to Sunday.</li>
+        <li>Each square is the average score of the sessions that started in it.</li>
+        <li>Too little data? It says so, and how many more days it needs.</li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <div class="fit" data-w="640" data-h="430" role="img" aria-label="The focus map: a weekday by hour grid in shades of indigo, darkest on Tuesday to Thursday between 10:00 and 12:00, with the insight 'Your deepest focus: Tue - Thu, 10:00 - 12:00'.">
+        <div class="mock card fmap" aria-hidden="true">
+          <div class="insight"><small>YOUR DEEPEST FOCUS</small><b>Tue - Thu, 10:00 - 12:00</b><span>Average automatic focus score of your sessions over the last 8 weeks.</span></div>
+          <div class="heat" data-heat></div>
+          <div class="legend">Low <i style="background:var(--heat-1)"></i><i style="background:var(--heat-2)"></i><i style="background:var(--heat-3)"></i><i style="background:var(--heat-4)"></i><i style="background:var(--heat-5)"></i> High</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ BREAKS -->
+<section class="sec">
+  <div class="wide split flip">
+    <div class="reveal">
+      <p class="eyebrow">Breaks</p>
+      <h2 class="h-lg">Rest that<br>actually rests.</h2>
+      <p class="lead">When a session ends - 50 minutes by default - a quiet window asks you to look away and breathe with a slow circle. The next session never starts by itself. You decide when.</p>
+      <ul class="facts">
+        <li>Sessions from 15 to 120 minutes, breaks from 3 to 30.</li>
+        <li><kbd>Enter</kbd> starts the next session, <kbd>+</kbd> adds five minutes.</li>
+        <li>An optional one-key mood check-in. It is only for you and never changes your score.</li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <div class="fit c" data-w="560" data-h="440" role="img" aria-label="The Break window: Break, 7:42 left, a softly glowing circle, 'Rest your eyes', and the buttons +5 minutes and Start next session.">
+        <div class="mock brk" aria-hidden="true">
+          <div class="brk-head"><span class="adot"></span><span>Break</span><span>7:42 left</span></div>
+          <div class="breath"><span></span></div>
+          <h5>Rest your eyes</h5>
+          <p>Look at something far away for 20 seconds. Breathe with the circle.</p>
+          <div class="btns"><span>+5 minutes</span><span class="p">Start next session</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ STREAK -->
+<section class="dark sec">
+  <div class="wide">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Streak and medals</p>
+      <h2 class="h-xl">Small days<br><span class="grad-accent">add up.</span></h2>
+      <p class="lead">One real focus session a day keeps your streak going. It never nags, never warns you about losing it, and forgives the days you rest.</p>
+    </div>
+    <div class="reveal" style="max-width:760px;margin:0 auto">
+      <div class="fit" data-w="640" data-h="300" role="img" aria-label="The streak card: a blue Two weeks medal, 16 day streak, Today is counted, Best 16 days, 2 rest tokens, the next medal Three weeks in 5 more days, and this week with Monday to Friday checked and Sunday as a rest day.">
+        <div class="mock card streak" aria-hidden="true">
+          <img class="med" src="img/medals/medal-14.svg" alt="">
+          <div>
+            <div class="n">16 <span>day streak</span></div>
+            <p>Today is counted. See you tomorrow.</p>
+            <div class="chips"><span class="chip">★ Best 16 days</span><span class="chip">2 rest tokens</span></div>
+          </div>
+          <div class="nextm"><div class="rg"><img src="img/medals/medal-21-locked-dark.svg" alt=""></div><small>NEXT MEDAL</small><b>Three weeks</b><span>5 more days</span></div>
+          <div class="wk">
+            <div>MON<i class="c">✓</i></div><div>TUE<i class="c">✓</i></div><div>WED<i class="c">✓</i></div><div>THU<i class="c">✓</i></div><div style="color:var(--accent-text)">FRI<i class="c">✓</i></div><div>SAT<i></i></div><div>SUN<i class="r">z</i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rules reveal" style="margin-top:72px">
+      <div><b>20 min</b><span>A day counts after one finished session of 20 minutes - or 10, or 30. Your choice.</span></div>
+      <div><b>04:00</b><span>Days start at 4 a.m., so late-night work belongs to the evening it started.</span></div>
+      <div><b>Rest days</b><span>Pick them (Sunday by default). They never break the streak.</span></div>
+      <div><b>2 tokens</b><span>Every 7 counted days earns a rest token, up to two. A missed day quietly uses one.</span></div>
+    </div>
+    <div class="medal-strip reveal" style="margin-top:88px" aria-label="All 20 medals, from bronze to royal gold">
+      <div class="medal-track">
+        <figure><img src="img/medals/medal-welcome.svg" alt="Welcome medal"><figcaption>Welcome</figcaption></figure>
+        <figure><img src="img/medals/medal-5.svg" alt="5 days"><figcaption>5 days</figcaption></figure>
+        <figure><img src="img/medals/medal-7.svg" alt="7 days"><figcaption>7 days</figcaption></figure>
+        <figure><img src="img/medals/medal-10.svg" alt="10 days"><figcaption>10 days</figcaption></figure>
+        <figure><img src="img/medals/medal-14.svg" alt="14 days"><figcaption>14 days</figcaption></figure>
+        <figure><img src="img/medals/medal-21.svg" alt="21 days"><figcaption>21 days</figcaption></figure>
+        <figure><img src="img/medals/medal-30.svg" alt="30 days"><figcaption>30 days</figcaption></figure>
+        <figure><img src="img/medals/medal-45.svg" alt="45 days"><figcaption>45 days</figcaption></figure>
+        <figure><img src="img/medals/medal-60.svg" alt="60 days"><figcaption>60 days</figcaption></figure>
+        <figure><img src="img/medals/medal-75.svg" alt="75 days"><figcaption>75 days</figcaption></figure>
+        <figure><img src="img/medals/medal-90.svg" alt="90 days"><figcaption>90 days</figcaption></figure>
+        <figure><img src="img/medals/medal-100.svg" alt="100 days"><figcaption>100 days</figcaption></figure>
+        <figure><img src="img/medals/medal-120.svg" alt="120 days"><figcaption>120 days</figcaption></figure>
+        <figure><img src="img/medals/medal-150.svg" alt="150 days"><figcaption>150 days</figcaption></figure>
+        <figure><img src="img/medals/medal-180.svg" alt="180 days"><figcaption>180 days</figcaption></figure>
+        <figure><img src="img/medals/medal-240.svg" alt="240 days"><figcaption>240 days</figcaption></figure>
+        <figure><img src="img/medals/medal-365.svg" alt="365 days"><figcaption>365 days</figcaption></figure>
+        <figure><img src="img/medals/medal-500.svg" alt="500 days"><figcaption>500 days</figcaption></figure>
+        <figure><img src="img/medals/medal-730.svg" alt="730 days"><figcaption>730 days</figcaption></figure>
+        <figure><img src="img/medals/medal-1000.svg" alt="1000 days"><figcaption>1000 days</figcaption></figure>
+      </div>
+    </div>
+    <p class="center muted" style="margin-top:28px;font-size:15px">20 medals, from bronze to royal gold. Each one turns in 3D when you open it.</p>
+  </div>
+</section>
+
+<!-- ============================================================ CONNECTIONS -->
+<section class="sec">
+  <div class="wide split">
+    <div class="reveal">
+      <p class="eyebrow">Optional, and yours</p>
+      <h2 class="h-lg">Your calendar in.<br>Your data with you.</h2>
+      <p class="lead">Both are off until you turn them on, and both talk only to Google.</p>
+      <ul class="facts">
+        <li><b>Google Calendar, read-only.</b> Your events appear in green next to your tasks, so you plan around real meetings. Nuqta can never change your calendar. Any event can become a task with one click.</li>
+        <li><b>Sync through your own Google Drive.</b> Your Nuqta data goes into a hidden app folder in your Drive that only Nuqta can see. Nuqta has no server of its own, so there is no Nuqta copy of your data anywhere else.</li>
+        <li><b>Several PCs, one list.</b> Each PC can even have its own task in focus at the same time.</li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <div class="fit" data-w="640" data-h="420" role="img" aria-label="Settings: Google Drive synced 2 minutes ago, Google Calendar read-only and refreshed 4 minutes ago, and the Nuqta license activated on this PC.">
+        <div class="mock card set" aria-hidden="true">
+          <div class="set-sect">CONNECTORS</div>
+          <div class="set-row"><span class="ic"><svg viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.1 9.1 4.5 4.5 0 0 0 7 18z"/></svg></span><div><b>Google Drive</b><small>Synced 2 min ago</small></div><span class="ob">Sync now</span></div>
+          <div class="set-row"><span class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><div><b>Google Calendar</b><small>Read-only · refreshed 4 min ago</small></div><span class="ob">Refresh</span></div>
+          <div class="set-sect">LICENSE</div>
+          <div class="set-row"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M10.8 12.2 20 3M16 7l3 3M14 9l2 2"/></svg></span><div><b>Nuqta license</b><small>Activated on this PC · key …7KQ2</small></div><span class="ob">Deactivate this PC</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PRIVACY TABLE -->
+<section id="privacy" class="sec" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Privacy, in detail</p>
+      <h2 class="h-lg">What leaves your computer.</h2>
+      <p class="lead">Your tasks, sessions, notes and streak live in a local database on your PC. These are the only cases in which anything goes online.</p>
+    </div>
+    <div class="reveal">
+      <table class="ptable">
+        <thead><tr><th>What</th><th>When</th><th>To</th></tr></thead>
+        <tbody>
+          <tr><td>Your license key and PC name</td><td>Once when you activate, then a quiet check about once a month while you are online. Being offline never locks the app.</td><td>Polar, the store that sells Nuqta</td></tr>
+          <tr><td>A copy of your Nuqta data</td><td>Only if you turn on sync.</td><td>A hidden app folder in your own Google Drive</td></tr>
+          <tr><td>A read of your calendar</td><td>Only if you connect Google Calendar: every 15 minutes, read-only, from a week ago to six weeks ahead.</td><td>Google Calendar</td></tr>
+          <tr><td>Analytics, crash reports, ads</td><td class="never">Never.</td><td>-</td></tr>
+        </tbody>
+      </table>
+      <p class="fine">Full details in the <a href="privacy.html">privacy policy</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ NUMBERS -->
+<section class="dark sec">
+  <div class="wide">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Light by design</p>
+      <h2 class="h-xl">Small. Fast.<br><span class="muted">Quiet.</span></h2>
+      <p class="lead">Nuqta is built with Rust and the web view that comes with Windows. You will not notice it is running - until you need it.</p>
+    </div>
+    <div class="stats reveal">
+      <div><b>2.7<small>MB</small></b><span>Installer. Installs for your account, no admin prompt.</span></div>
+      <div><b>~110<small>ms</small></b><span>From launch to ready in the tray.</span></div>
+      <div><b>~25<small>ms</small></b><span>From the shortcut to the Command bar on screen.</span></div>
+      <div><b>~54<small>MB</small></b><span>Memory while idle, including its web views.</span></div>
+      <div><b>~0<small>%</small></b><span>CPU while idle. The notch redraws at most once a second.</span></div>
+    </div>
+    <p class="fine center" style="margin-top:22px">Median values measured with release builds on the developer's Windows 11 PC, November 2026. Yours will differ a little.</p>
+  </div>
+</section>
+
+<!-- ============================================================ KEYBOARD -->
+<section class="sec">
+  <div class="wide">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Keyboard first</p>
+      <h2 class="h-lg">Everything, without the mouse.</h2>
+      <p class="lead">Every action in Nuqta has a key. These are the ones you will use every day.</p>
+    </div>
+    <div class="kgrid reveal">
+      <div class="kcard"><h4>Anywhere</h4>
+        <div class="kline"><span>Open the Command bar</span><span><b class="kbd">Ctrl</b><b class="kbd">Shift</b><b class="kbd">Space</b></span></div>
+        <div class="kline"><span>Pause or resume</span><span><b class="kbd">Ctrl</b><b class="kbd">Shift</b><b class="kbd">P</b></span></div>
+        <div class="kline"><span>Change both in Settings</span><span></span></div>
+      </div>
+      <div class="kcard"><h4>Command bar</h4>
+        <div class="kline"><span>Add for today</span><span><b class="kbd">↵</b></span></div>
+        <div class="kline"><span>Add and start</span><span><b class="kbd">Ctrl</b><b class="kbd">↵</b></span></div>
+        <div class="kline"><span>Send to the Inbox</span><span><b class="kbd">Tab</b></span></div>
+        <div class="kline"><span>Mark the task in focus done</span><span><b class="kbd">Ctrl</b><b class="kbd">D</b></span></div>
+      </div>
+      <div class="kcard"><h4>Task hub</h4>
+        <div class="kline"><span>Day · Week · Month</span><span><b class="kbd">D</b><b class="kbd">W</b><b class="kbd">M</b></span></div>
+        <div class="kline"><span>Today · Timeline</span><span><b class="kbd">T</b><b class="kbd">L</b></span></div>
+        <div class="kline"><span>New task in the Inbox</span><span><b class="kbd">N</b></span></div>
+        <div class="kline"><span>Move a task a day · 15 min</span><span><b class="kbd">Alt</b><b class="kbd">←→</b><b class="kbd">↑↓</b></span></div>
+      </div>
+    </div>
+    <p class="center" style="margin-top:28px"><a href="guide.html#keys">See every shortcut in the guide ›</a></p>
+  </div>
+</section>
+
+<!-- ============================================================ WHAT IT DOESN'T DO -->
+<section class="sec tight">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:40px">
+      <p class="eyebrow">Honest about it</p>
+      <h2 class="h-lg">What Nuqta doesn't do.</h2>
+      <p class="lead">A focus app should know what to leave out. If something adds noise, it isn't here.</p>
+    </div>
+    <div class="nots reveal">
+      <div><b>No notifications</b><span>No badges, no sounds, no reminders. Ever.</span></div>
+      <div><b>No account</b><span>Nothing to sign up for. Your data is not ours.</span></div>
+      <div><b>No subscription</b><span>You pay once.</span></div>
+      <div><b>No AI</b><span>The score and the map are simple arithmetic you can check.</span></div>
+      <div><b>No teams</b><span>It is for your own work, not for assigning work to others.</span></div>
+      <div><b>No Mac version yet</b><span>Nuqta is for Windows 11 today. A Mac version is planned.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PRICING -->
+<section id="pricing" class="sec" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:48px">
+      <p class="eyebrow">Pricing</p>
+      <h2 class="h-lg">One price. Yours to keep.</h2>
+    </div>
+    <div class="price reveal">
+      <b style="font-size:19px;letter-spacing:-.01em">Nuqta for Windows</b>
+      <div class="amt">$4.99<small>once</small></div>
+      <ul>
+        <li>Every feature, nothing locked</li>
+        <li>Activate it on up to 3 of your PCs</li>
+        <li>No subscription, no account, no ads</li>
+        <li>Your data stays on your computer</li>
+      </ul>
+      <!-- TODO: the Polar checkout link (buy.polar.sh/...) once the product exists. -->
+      <a class="btn" href="#pricing">Buy Nuqta</a>
+      <p class="fine">Secure checkout by Polar. The installer and your license key arrive by email.</p>
+      <div class="sys"><span>Windows 11 · 64-bit</span><span>2.7 MB</span><span>Works offline</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FAQ -->
+<section id="faq" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:40px"><h2 class="h-lg">Questions.</h2></div>
+    <div class="faq">
+      <details><summary>What does "Nuqta" mean?</summary><p>"Dot" - or "point" - in Uzbek. The app's icon is a ring of quiet dots around one bright dot: the one task in focus.</p></details>
+      <details><summary>Which computers does Nuqta run on?</summary><p>Windows 11, 64-bit. Windows 10 should work too, but it has not been tested yet, so it is not promised.</p></details>
+      <details><summary>Is there a Mac version?</summary><p>Not yet. A Mac version is planned, without a date. The <a href="changelog.html">changelog</a> shows what is next.</p></details>
+      <details><summary>Is it a subscription?</summary><p>No. You pay $4.99 once and keep it.</p></details>
+      <details><summary>How does the license key work?</summary><p>After you buy, Polar emails you the installer and a license key. Nuqta asks for the key the first time it starts. One key works on up to 3 PCs; to move it, choose Settings → License → Deactivate this PC on the old one.</p></details>
+      <details><summary>Does it work offline?</summary><p>Yes. It needs the internet once, to activate your key. After that it checks the key about once a month when you happen to be online - being offline never locks it.</p></details>
+      <details><summary>Do I need an account?</summary><p>No. There is no Nuqta account. Google Drive sync and Google Calendar are optional and use your own Google account only if you connect them.</p></details>
+      <details><summary>Will it send me notifications?</summary><p>Never. The only window that appears by itself is the Break window, when a focus session you started ends.</p></details>
+      <details><summary>Does it use AI?</summary><p>No. The focus score follows four plain rules, and the focus map is an average of your scores. Nothing you write is sent anywhere to be analysed.</p></details>
+      <details><summary>Can I import tasks from another app?</summary><p>No, there is no import. You can connect Google Calendar and turn any event into a task with one click.</p></details>
+      <details><summary>Will Windows warn me when I install it?</summary><p>It may. Until the installer is code-signed, Windows SmartScreen can show "Windows protected your PC" for a new app. Choose "More info", then "Run anyway". The installer installs for your account only and never asks for admin rights.</p></details>
+      <details><summary>Where is my data stored?</summary><p>In a local database in your Windows user folder. With sync on, a copy also goes to a hidden app folder in your own Google Drive. <a href="privacy.html">Privacy policy</a></p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FINAL -->
+<section class="dark final">
+  <div class="wrap">
+    <img class="icon" src="icon.svg" alt="" width="96" height="96">
+    <h2 class="h-xl grad">Do one thing at a time.<br>And finish it.</h2>
+    <div class="ctas">
+      <a class="btn" href="#pricing">Buy Nuqta - $4.99</a>
+      <a class="btn ghost" href="guide.html">Read the guide</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wide">
+    <div>
+      <a class="brand" href="./" style="margin:0"><img src="icon.svg" alt="" width="22" height="22"> Nuqta</a>
+      <p>A calm focus app for Windows, made by an independent developer.</p>
+      <p>© <span id="year">2026</span> Nuqta</p>
+    </div>
+    <div><h6>Product</h6><a href="#notch">Overview</a><a href="#hub">Features</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></div>
+    <div><h6>Learn</h6><a href="guide.html">Guide</a><a href="guide.html#keys">Shortcuts</a><a href="changelog.html">Changelog</a></div>
+    <div><h6>Legal</h6><a href="privacy.html">Privacy policy</a><a href="mailto:ah.isroilov@gmail.com">Contact</a></div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
 </body>
 </html>

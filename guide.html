@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guide - Nuqta</title>
+  <meta name="description" content="How to install, activate and use Nuqta: the Command bar, focus sessions, breaks, the Task hub, repeating tasks, the focus score, streaks, Google Calendar, sync and every keyboard shortcut.">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wide">
+    <a class="brand" href="./"><img src="icon.svg" alt="" width="24" height="24"> Nuqta</a>
+    <nav class="nav-links" aria-label="Main">
+      <a class="hide-sm" href="./#notch">Overview</a>
+      <a class="hide-sm" href="./#hub">Features</a>
+      <a href="guide.html" style="color:var(--text)">Guide</a>
+      <a class="hide-sm" href="changelog.html">Changelog</a>
+      <a class="nav-buy" href="./#pricing">Buy</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wide">
+  <div class="doc-hero">
+    <p class="eyebrow">Guide</p>
+    <h1 class="h-xl">How Nuqta works.</h1>
+    <p class="lead" style="max-width:36em">Everything you need, from the first install to the last shortcut. Nuqta is small, so this page covers all of it.</p>
+  </div>
+
+  <div class="doc-grid">
+    <nav class="toc" aria-label="On this page">
+      <a href="#install">Install</a>
+      <a href="#activate">Activate your key</a>
+      <a href="#first">Your first task</a>
+      <a href="#bar">The Command bar</a>
+      <a href="#sessions">Focus sessions</a>
+      <a href="#breaks">Breaks</a>
+      <a href="#hub">The Task hub</a>
+      <a href="#repeat">Repeating tasks</a>
+      <a href="#score">Focus score and map</a>
+      <a href="#streak">Streak and medals</a>
+      <a href="#calendar">Google Calendar</a>
+      <a href="#sync">Sync between PCs</a>
+      <a href="#license">License and PCs</a>
+      <a href="#settings">Settings</a>
+      <a href="#keys">Keyboard shortcuts</a>
+      <a href="#uninstall">Uninstall</a>
+    </nav>
+
+    <article class="doc">
+      <h2 id="install">Install</h2>
+      <p>After you buy, Polar emails you a link to the installer. Run it and press <b>Install</b>. It takes a few seconds, installs for your Windows account only, and never asks for admin rights. There are no questions to answer.</p>
+      <div class="note-box"><b>If Windows shows "Windows protected your PC":</b> until the installer is code-signed, SmartScreen can warn about new apps. Choose <b>More info</b>, then <b>Run anyway</b>.</div>
+      <p>Nuqta then lives in the tray, next to the clock. Its icon is three dots in a row; the centre one turns indigo while a focus session runs.</p>
+
+      <h2 id="activate">Activate your key</h2>
+      <p>The first time Nuqta starts, it asks for the license key from your purchase email. Paste it and press <b>Activate</b>. That is the only time Nuqta needs the internet to work.</p>
+      <ul>
+        <li>One key works on up to <b>3 PCs</b>.</li>
+        <li>"That key doesn't exist" - check for a missing character.</li>
+        <li>"This key is already active on 3 PCs, or it was refunded" - deactivate it on one of your other PCs first (see <a href="#license">License and PCs</a>).</li>
+        <li>"Can't reach the license server" - check your connection and try again.</li>
+      </ul>
+      <p>On the first run, six short Welcome steps follow. You can replay them any time from Settings → <b>Show welcome again</b>.</p>
+
+      <h2 id="first">Your first task</h2>
+      <ol>
+        <li>Press <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Space</kbd> from any app. The Command bar appears.</li>
+        <li>Type what you want to do, for example <code>Write the report ~45m</code>, and press <kbd>Ctrl</kbd> <kbd>↵</kbd> to add it and start right away.</li>
+        <li>The notch at the top of your screen now shows the task and a timer. Work.</li>
+        <li>When you are done, press the shortcut again and <kbd>Ctrl</kbd> <kbd>D</kbd> - or point at the notch and press the check.</li>
+      </ol>
+
+      <h2 id="bar">The Command bar</h2>
+      <p>The bar shows the task in focus (with a Done button) and today's list in time order: tasks with a time and today's calendar events by the clock, then "Any time" - overdue tasks first, with their day in amber, then the rest.</p>
+      <h3>What you can type</h3>
+      <table>
+        <thead><tr><th>You type</th><th>You get</th></tr></thead>
+        <tbody>
+          <tr><td><code>Call the bank</code></td><td>A task planned for today.</td></tr>
+          <tr><td><code>Write the report ~45m</code></td><td>A 45-minute timebox. Up to three digits, then <code>m</code>.</td></tr>
+          <tr><td><code>Stretch daily</code> · <code>Stretch every day</code></td><td>Repeats every day.</td></tr>
+          <tr><td><code>Standup notes weekdays</code></td><td>Repeats Monday to Friday.</td></tr>
+          <tr><td><code>Gym every mon wed fri</code></td><td>Repeats on those days. Full day names and "and" work too.</td></tr>
+          <tr><td><code>Review every week</code> · <code>Pay rent every month</code></td><td>Weekly on today's weekday · monthly on today's date.</td></tr>
+          <tr><td><code>Water plants every 3 days</code></td><td>Every 3 days (2 to 30).</td></tr>
+          <tr><td><code>Clean desk every 2 days after done</code></td><td>The next one counts from when you finish (daily and every-N-days only).</td></tr>
+          <tr><td><code>Gym ~60m every mon wed</code></td><td>Both: put the timebox first, the repeat at the end.</td></tr>
+        </tbody>
+      </table>
+      <p>While you type, small chips under the input show exactly what Enter will make: where it goes (Today or Inbox), the timebox and the repeat. Press <kbd>Tab</kbd> to send the task to the Inbox instead of today.</p>
+      <h3>Keys</h3>
+      <table>
+        <tbody>
+          <tr><td><kbd>↵</kbd></td><td>With text: add it. With an empty input: start the selected task.</td></tr>
+          <tr><td><kbd>Ctrl</kbd> <kbd>↵</kbd></td><td>Add and start.</td></tr>
+          <tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Select a task.</td></tr>
+          <tr><td><kbd>Tab</kbd></td><td>Switch the destination: Today ↔ Inbox.</td></tr>
+          <tr><td><kbd>Ctrl</kbd> <kbd>D</kbd></td><td>Mark the task in focus done.</td></tr>
+          <tr><td><kbd>Esc</kbd></td><td>Close. The bar also closes when you click elsewhere.</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="sessions">Focus sessions</h2>
+      <p>Starting a task starts a focus session - 50 minutes by default. The notch shows the time; its thin line fills as the session runs.</p>
+      <ul>
+        <li><b>Pause</b> with <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd>, from the notch, or from the tray menu.</li>
+        <li><b>Automatic pause:</b> when your PC sleeps, locks, or gets no keyboard or mouse input for 5 minutes, the session pauses by itself - backdated to your last input - and stays paused until you resume.</li>
+        <li><b>Timebox:</b> past it, the notch time turns amber. The next time you open the Command bar it asks once: <b>Ship it</b> (<kbd>S</kbd>), <b>+10 minutes</b> (<kbd>+</kbd>), or <b>Break it down</b> (<kbd>B</kbd>) into smaller tasks. <kbd>Esc</kbd> decides later.</li>
+        <li><b>Switching:</b> only one task can be in focus. Starting another asks what happens to the current one: <b>Done</b> (<kbd>D</kbd>), <b>Not finished yet</b> (<kbd>L</kbd>) or <b>No longer needed</b> (<kbd>X</kbd>). <kbd>Esc</kbd> keeps working on it.</li>
+      </ul>
+
+      <h2 id="breaks">Breaks</h2>
+      <p>When a session's time is up, the Break window appears: a slow breathing circle and a countdown (10 minutes by default). <kbd>Enter</kbd> starts the next session, <kbd>+</kbd> adds five minutes, <kbd>Esc</kbd> closes it. The next session never starts on its own.</p>
+      <p>If you turn on the mood check-in in Settings (once a day or after each session), the break first asks how you feel, from 1 to 5. It is only for you; it never changes your focus score.</p>
+
+      <h2 id="hub">The Task hub</h2>
+      <p>Open it from the tray (<b>Open Task hub</b>). It has three pages in the sidebar: Tasks, Focus and Settings.</p>
+      <h3>Inbox and calendar</h3>
+      <ul>
+        <li>The <b>Inbox</b> holds tasks without a day, plus <b>Overdue</b> tasks left on a past day. Type in "Add a task" - the same <code>~45m</code> and repeat phrases work. Press <kbd>N</kbd> to jump there.</li>
+        <li><b>Day, Week, Month</b> (<kbd>D</kbd> <kbd>W</kbd> <kbd>M</kbd>). <kbd>←</kbd> <kbd>→</kbd> move, <kbd>T</kbd> goes to today.</li>
+        <li><b>Drag and drop:</b> drop a task on a time to plan it (it snaps to 15 minutes), on a day header or a Month day to plan it without a time, or on the Inbox to unplan it. Past days are history and refuse drops.</li>
+        <li>Finished sessions, dropped tasks and calendar events all stay visible, so the calendar is an honest record.</li>
+      </ul>
+      <h3>Timeline</h3>
+      <p>Press <kbd>L</kbd> (or pick it from the "Tasks" title menu) for one searchable list of all your tasks, grouped by date or by status.</p>
+      <h3>The task panel</h3>
+      <p>Click any task to open its panel beside the pointer. There you can change its day, time and timebox, see the sessions spent on it, add steps (the first open step shows in the notch as "Next"), write notes - links become clickable - and start it with <kbd>Ctrl</kbd> <kbd>↵</kbd>. <kbd>Alt</kbd> <kbd>←</kbd> <kbd>→</kbd> moves it a day, <kbd>Alt</kbd> <kbd>↑</kbd> <kbd>↓</kbd> moves it 15 minutes. Delete is in the ••• menu, with Undo.</p>
+
+      <h2 id="repeat">Repeating tasks</h2>
+      <p>Turn on <b>Repeat</b> in a task's panel, or type a repeat phrase. Choose Daily, Weekdays, Weekly on chosen days, Monthly on a day of the month, or Every N days.</p>
+      <ul>
+        <li>Only the current occurrence exists as a task. When you finish or drop it, the next one appears.</li>
+        <li>The Week and Month views show the coming occurrences, faded, up to six weeks ahead.</li>
+        <li>In the ••• menu: <b>Skip to next</b> and <b>Stop repeating</b>.</li>
+        <li>Monthly on the 31st falls on the last day of shorter months.</li>
+      </ul>
+
+      <h2 id="score">Focus score and map</h2>
+      <p>Each session of at least 5 active minutes gets a score from 1 to 5 when it ends. It starts at 5, and loses one point each for: more than 10% paused; each time you opened the switch prompt (at most two); leaving more than 20% early for another task; running more than 25% over the timebox. Finishing early with Done is never penalised.</p>
+      <p>Focus → <b>Focus map</b> shows the average score by weekday and hour (07:00-22:00) over the last 8 weeks. After 14 days with sessions it names your best two-hour window.</p>
+
+      <h2 id="streak">Streak and medals</h2>
+      <ul>
+        <li>A day counts after one finished focus session of at least 20 minutes (set 10, 20 or 30 in Settings).</li>
+        <li>A day starts at 04:00, so late-night work belongs to the evening it started.</li>
+        <li><b>Rest days</b> (Sunday by default) never break the streak; focusing on one still counts.</li>
+        <li><b>Rest tokens:</b> one for every 7 counted days, up to two. A missed day uses one automatically.</li>
+        <li>20 medals, from 5 days to 1000. A new medal is shown in your next break - never during focus. Open any medal in Focus → Streak to turn it in 3D.</li>
+      </ul>
+
+      <h2 id="calendar">Google Calendar</h2>
+      <p>Settings → <b>Connectors</b> → Google Calendar → <b>Connect</b>. Your browser opens Google's sign-in; Nuqta asks only for read-only access to your calendar.</p>
+      <ul>
+        <li>Events from your primary calendar, a week back to six weeks ahead, appear in green in the calendar and the Command bar. They refresh every 15 minutes.</li>
+        <li>Click an event and choose <b>Turn into a task</b> to plan work around it.</li>
+        <li>Nuqta never changes your calendar. Disconnect removes the events from Nuqta.</li>
+      </ul>
+      <div class="note-box">While Google is still reviewing Nuqta's sign-in, Google may show "Google hasn't verified this app" during sign-in.</div>
+
+      <h2 id="sync">Sync between PCs</h2>
+      <p>Settings → <b>Connectors</b> → Google Drive → <b>Connect</b>. Nuqta keeps your data in a hidden app folder in your own Google Drive that only Nuqta can see; you will not find it among your files. Connect the same Google account on your other PCs and they merge.</p>
+      <ul>
+        <li>Each PC can have its own task in focus at the same time.</li>
+        <li>Your devices are listed under Settings → Devices.</li>
+        <li>Disconnect stops syncing. Tick "Also delete Nuqta's data in Google Drive" to remove the copy there.</li>
+      </ul>
+
+      <h2 id="license">License and PCs</h2>
+      <p>Your key works on up to 3 PCs at once. To move it to a new PC, open Settings → <b>License</b> → <b>Deactivate this PC</b> on the old one, then activate on the new one. Nuqta checks the key about once a month when you are online; being offline never locks it.</p>
+
+      <h2 id="settings">Settings</h2>
+      <table>
+        <tbody>
+          <tr><td>Focus session</td><td>15 to 120 minutes, in steps of 5 (default 50).</td></tr>
+          <tr><td>Break</td><td>3 to 30 minutes (default 10).</td></tr>
+          <tr><td>Mood check-in</td><td>Never, once a day, or each session.</td></tr>
+          <tr><td>Streak day counts after</td><td>10, 20 or 30 minutes.</td></tr>
+          <tr><td>Rest days</td><td>Any weekdays.</td></tr>
+          <tr><td>Command bar shortcut</td><td>Click it and press a new one. If another app has taken it, Nuqta says so.</td></tr>
+          <tr><td>Appearance</td><td>System, light or dark. The notch is always dark.</td></tr>
+          <tr><td>Launch at startup</td><td>On by default after the Welcome.</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="keys">Keyboard shortcuts</h2>
+      <table>
+        <thead><tr><th>Where</th><th>Keys</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>Anywhere</td><td><kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Space</kbd></td><td>Open the Command bar</td></tr>
+          <tr><td>Anywhere</td><td><kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd></td><td>Pause or resume</td></tr>
+          <tr><td>Command bar</td><td><kbd>↵</kbd> · <kbd>Ctrl</kbd> <kbd>↵</kbd></td><td>Add or start · add and start</td></tr>
+          <tr><td>Command bar</td><td><kbd>↑</kbd> <kbd>↓</kbd> · <kbd>Tab</kbd></td><td>Select · Today or Inbox</td></tr>
+          <tr><td>Command bar</td><td><kbd>Ctrl</kbd> <kbd>D</kbd> · <kbd>Esc</kbd></td><td>Done · close</td></tr>
+          <tr><td>Switch prompt</td><td><kbd>D</kbd> <kbd>L</kbd> <kbd>X</kbd> · <kbd>Esc</kbd></td><td>Done, not finished yet, no longer needed · keep working</td></tr>
+          <tr><td>Timebox is up</td><td><kbd>S</kbd> <kbd>+</kbd> <kbd>B</kbd> · <kbd>Esc</kbd></td><td>Ship it, +10 minutes, break it down · decide later</td></tr>
+          <tr><td>Task hub</td><td><kbd>D</kbd> <kbd>W</kbd> <kbd>M</kbd> · <kbd>L</kbd></td><td>Day, week, month · Timeline</td></tr>
+          <tr><td>Task hub</td><td><kbd>←</kbd> <kbd>→</kbd> · <kbd>T</kbd> · <kbd>N</kbd></td><td>Move · today · new task in the Inbox</td></tr>
+          <tr><td>Task hub</td><td><kbd>Ctrl</kbd> <kbd>W</kbd> · <kbd>Ctrl</kbd> <kbd>M</kbd></td><td>Hide to the tray · minimize</td></tr>
+          <tr><td>Task panel</td><td><kbd>Ctrl</kbd> <kbd>↵</kbd> · <kbd>Ctrl</kbd> <kbd>D</kbd></td><td>Start focus · toggle done</td></tr>
+          <tr><td>Task panel</td><td><kbd>Alt</kbd> <kbd>←</kbd> <kbd>→</kbd> · <kbd>Alt</kbd> <kbd>↑</kbd> <kbd>↓</kbd></td><td>Move a day · move 15 minutes</td></tr>
+          <tr><td>Break</td><td><kbd>↵</kbd> · <kbd>+</kbd> · <kbd>Esc</kbd></td><td>Next session · 5 more minutes · close</td></tr>
+          <tr><td>Medal viewer</td><td><kbd>F</kbd> · <kbd>←</kbd> <kbd>→</kbd></td><td>Flip · turn</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="uninstall">Uninstall</h2>
+      <p>Windows Settings → Apps → Installed apps → Nuqta → <b>Uninstall</b>. Your tasks and history are kept in <code>%APPDATA%\app.nuqta</code>, so a reinstall picks up where you left off; delete that folder to remove them too. Deactivate your key first if you want to use it on another PC.</p>
+      <p style="margin-top:48px">Something missing or wrong? <a href="mailto:ah.isroilov@gmail.com">Write to the developer</a>.</p>
+    </article>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wide">
+    <div>
+      <a class="brand" href="./" style="margin:0"><img src="icon.svg" alt="" width="22" height="22"> Nuqta</a>
+      <p>A calm focus app for Windows, made by an independent developer.</p>
+      <p>© <span id="year">2026</span> Nuqta</p>
+    </div>
+    <div><h6>Product</h6><a href="./#notch">Overview</a><a href="./#hub">Features</a><a href="./#pricing">Pricing</a><a href="./#faq">FAQ</a></div>
+    <div><h6>Learn</h6><a href="guide.html">Guide</a><a href="guide.html#keys">Shortcuts</a><a href="changelog.html">Changelog</a></div>
+    <div><h6>Legal</h6><a href="privacy.html">Privacy policy</a><a href="mailto:ah.isroilov@gmail.com">Contact</a></div>
+  </div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
