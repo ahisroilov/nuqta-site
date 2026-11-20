@@ -615,20 +615,28 @@ section { position: relative; }
 .tag { display: inline-block; font-size: 11.5px; font-weight: 650; padding: 3px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-text); margin-left: 8px; vertical-align: 3px; letter-spacing: 0; }
 .tag.gray { background: var(--hover); color: var(--text-2); }
 
-/* ---- Full-screen demo: a full-screen editor, the shortcut, the Command bar */
-.fs { width: 1440px; height: 810px; border-radius: 24px; overflow: hidden; position: relative; background: #11131a; box-shadow: 0 50px 120px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.09); }
-.fs-code { position: absolute; left: 0; top: 0; bottom: 0; right: 120px; padding-top: 58px; }
-.fs-ln { display: flex; align-items: center; height: 26px; white-space: nowrap; }
-.fs-ln.cur { background: rgba(255, 255, 255, 0.035); }
-.fs-ln .no { width: 72px; flex: none; padding-right: 26px; text-align: right; color: #4b5060; font-size: 13px; font-variant-numeric: tabular-nums; }
-.fs-ln.cur .no { color: #9aa0b4; }
-.fs-ln i { display: inline-block; height: 9px; border-radius: 5px; margin-right: 9px; flex: none; }
-.fs-ln .kw { background: #c792ea; } .fs-ln .fn { background: #82aaff; } .fs-ln .st { background: #c3e88d; }
-.fs-ln .vr { background: #d6d8e0; opacity: 0.7; } .fs-ln .cm { background: #5c6370; } .fs-ln .nm { background: #f78c6c; }
-.fs-ln .cur-caret { width: 2px; height: 18px; border-radius: 1px; background: #f3f2ef; margin-left: -4px; animation: blink 1.05s steps(1) infinite; }
-.fs.open .cur-caret { visibility: hidden; }
-.fs-map { position: absolute; right: 0; top: 58px; width: 120px; bottom: 0; border-left: 1px solid rgba(255, 255, 255, 0.05); padding: 0 18px; opacity: 0.4; }
-.fs-map i { display: block; height: 3px; border-radius: 2px; margin: 0 0 3px; background: #82aaff; }
+/* ---- "From anywhere" demo: a Windows desktop, the shortcut, the Command bar */
+.fs { width: 1440px; height: 810px; border-radius: 24px; overflow: hidden; position: relative; background: #0b1a4a; box-shadow: 0 50px 120px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.09); }
+.fs-wall { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+/* Windows 11-style taskbar: centred apps, tray and clock on the right */
+.fs-tb { position: absolute; left: 0; right: 0; bottom: 0; height: 56px; z-index: 2; display: flex; align-items: center; justify-content: center; background: rgba(28, 28, 34, 0.78); backdrop-filter: blur(24px) saturate(150%); -webkit-backdrop-filter: blur(24px) saturate(150%); border-top: 1px solid rgba(255, 255, 255, 0.08); }
+.tb-mid { display: flex; align-items: center; gap: 6px; }
+.tb-ic { position: relative; width: 44px; height: 44px; border-radius: 8px; display: grid; place-items: center; }
+.tb-ic.on { background: rgba(255, 255, 255, 0.06); }
+.tb-ic.on::after { content: ''; position: absolute; bottom: 2px; left: 50%; width: 6px; height: 3px; border-radius: 2px; background: #9aa3b5; transform: translateX(-50%); }
+.tb-start { display: grid; grid-template-columns: 11px 11px; gap: 2px; }
+.tb-start i { width: 11px; height: 11px; border-radius: 1.5px; background: linear-gradient(135deg, #7fd3ff, #2f86f2); }
+.tb-search { height: 38px; width: 230px; margin: 0 4px; border-radius: 19px; display: flex; align-items: center; gap: 10px; padding: 0 16px; background: rgba(255, 255, 255, 0.08); color: #c9c9cf; font-size: 14px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06); }
+.tb-app { width: 26px; height: 26px; border-radius: 7px; display: grid; place-items: center; }
+.tb-app.globe { border-radius: 50%; background: radial-gradient(circle at 35% 30%, #8ff0d0, #1aa88a 45%, #0c5fbf); }
+.tb-app.term { background: #1e1e24; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18); color: #e8e8ea; font: 700 11px/1 var(--font); }
+.tb-app.notes { background: linear-gradient(180deg, #ffd25e 0 30%, #fff6d8 30%); box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08); }
+.tb-app.music { background: linear-gradient(135deg, #ff6a8b, #b13cff); }
+.tb-tray { position: absolute; right: 14px; top: 0; bottom: 0; display: flex; align-items: center; gap: 14px; color: #f3f2ef; }
+.tb-tray .tg { display: flex; align-items: center; gap: 3px; }
+.tb-tray .tg b { width: 5px; height: 5px; border-radius: 50%; background: #fff; opacity: 0.45; }
+.tb-tray .tg b:nth-child(2) { width: 8px; height: 8px; background: #8f90f5; opacity: 1; }
+.tb-clock { font-size: 12.5px; line-height: 1.35; text-align: right; font-variant-numeric: tabular-nums; margin-left: 2px; }
 .fs .notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 3; }
 .fs-bar { position: absolute; left: 50%; top: 120px; z-index: 4; opacity: 0; transform: translateX(-50%) scale(0.96); transform-origin: 50% 0; transition: opacity 160ms ease-out, transform 200ms var(--ease); pointer-events: none; }
 .fs.open .fs-bar { opacity: 1; transform: translateX(-50%) scale(1); }
@@ -638,7 +646,7 @@ section { position: relative; }
 .fs-new { height: 0; opacity: 0; overflow: hidden; transition: height 240ms var(--ease), opacity 240ms ease-out; }
 .fs.added .fs-new { height: 50px; opacity: 1; animation: fs-flash 1.6s ease-out; }
 @keyframes fs-flash { 0%, 30% { background: var(--accent-soft); } 100% { background: transparent; } }
-.fs-keys { position: absolute; left: 50%; bottom: 64px; z-index: 5; }
+.fs-keys { position: absolute; left: 50%; bottom: 112px; z-index: 5; }
 .fs-keys .grp { position: absolute; left: 0; bottom: 0; display: flex; align-items: center; gap: 12px; white-space: nowrap; opacity: 0; transform: translate(-50%, 12px); transition: opacity 220ms ease-out, transform 220ms var(--ease); }
 .fs-keys .grp.show { opacity: 1; transform: translate(-50%, 0); }
 .key { min-width: 84px; height: 68px; padding: 0 22px; border-radius: 16px; display: grid; place-items: center; background: linear-gradient(180deg, #3b3b42, #2a2a30); color: #f5f5f7; font: 600 21px/1 var(--font); box-shadow: 0 7px 0 #17171b, 0 16px 34px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.14); transition: transform 90ms ease-out, box-shadow 90ms ease-out, background 90ms ease-out; }

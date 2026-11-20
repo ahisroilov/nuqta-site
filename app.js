@@ -171,27 +171,9 @@
     else run();
   }
 
-  // ---- Full-screen demo: shortcut → Command bar → type → Enter → Esc, looped
+  // ---- "From anywhere" demo: shortcut → Command bar → type → Enter → Esc, looped
   // while on screen (a still frame with reduced motion).
   document.querySelectorAll('[data-fs]').forEach(function (root) {
-    // A code editor in full screen: deterministic coloured "tokens".
-    var code = root.querySelector('[data-code]'), map = root.querySelector('[data-map]');
-    var kinds = ['kw', 'fn', 'vr', 'st', 'vr', 'nm', 'vr', 'fn'], html = '', mh = '';
-    for (var l = 0; l < 29; l++) {
-      var ind = [0, 1, 1, 2, 2, 2, 1, 0, 0, 1, 2, 3, 3, 2, 1, 1, 0, 0, 1, 1, 2, 2, 1, 0, 0, 1, 2, 1, 0][l];
-      var line = '<div class="fs-ln' + (l === 13 ? ' cur' : '') + '"><span class="no">' + (41 + l) + '</span><i style="width:' + ind * 30 + 'px;background:none;margin:0"></i>';
-      if (l % 7 === 4 || l === 0) line += '<i class="cm" style="width:' + (180 + (l * 37) % 160) + 'px"></i>';
-      else if (l % 9 !== 7) {
-        var n = 2 + (l * 5) % 4;
-        for (var t = 0; t < n; t++) line += '<i class="' + kinds[(l + t * 3) % kinds.length] + '" style="width:' + (28 + ((l * 13 + t * 29) % 7) * 14) + 'px"></i>';
-      }
-      if (l === 13) line += '<i class="cur-caret"></i>';
-      html += line + '</div>';
-      mh += '<i style="width:' + (20 + (l * 23) % 60) + 'px;opacity:' + (0.4 + (l % 3) * 0.2) + '"></i>';
-    }
-    code.innerHTML = html;
-    map.innerHTML = mh + mh;
-
     var section = root.closest('section');
     var steps = section ? section.querySelectorAll('.fs-steps li') : [];
     var typed = root.querySelector('.fs-typed'), ph = root.querySelector('.fs-bar .ph'), toks = root.querySelector('.fs-tokens');
