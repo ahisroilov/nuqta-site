@@ -171,6 +171,77 @@
     else run();
   }
 
+  // ---- Full-screen demo: shortcut → Command bar → type → Enter → Esc, looped
+  // while on screen (a still frame with reduced motion).
+  document.querySelectorAll('[data-fs]').forEach(function (root) {
+    // A code editor in full screen: deterministic coloured "tokens".
+    var code = root.querySelector('[data-code]'), map = root.querySelector('[data-map]');
+    var kinds = ['kw', 'fn', 'vr', 'st', 'vr', 'nm', 'vr', 'fn'], html = '', mh = '';
+    for (var l = 0; l < 29; l++) {
+      var ind = [0, 1, 1, 2, 2, 2, 1, 0, 0, 1, 2, 3, 3, 2, 1, 1, 0, 0, 1, 1, 2, 2, 1, 0, 0, 1, 2, 1, 0][l];
+      var line = '<div class="fs-ln' + (l === 13 ? ' cur' : '') + '"><span class="no">' + (41 + l) + '</span><i style="width:' + ind * 30 + 'px;background:none;margin:0"></i>';
+      if (l % 7 === 4 || l === 0) line += '<i class="cm" style="width:' + (180 + (l * 37) % 160) + 'px"></i>';
+      else if (l % 9 !== 7) {
+        var n = 2 + (l * 5) % 4;
+        for (var t = 0; t < n; t++) line += '<i class="' + kinds[(l + t * 3) % kinds.length] + '" style="width:' + (28 + ((l * 13 + t * 29) % 7) * 14) + 'px"></i>';
+      }
+      if (l === 13) line += '<i class="cur-caret"></i>';
+      html += line + '</div>';
+      mh += '<i style="width:' + (20 + (l * 23) % 60) + 'px;opacity:' + (0.4 + (l % 3) * 0.2) + '"></i>';
+    }
+    code.innerHTML = html;
+    map.innerHTML = mh + mh;
+
+    var section = root.closest('section');
+    var steps = section ? section.querySelectorAll('.fs-steps li') : [];
+    var typed = root.querySelector('.fs-typed'), ph = root.querySelector('.fs-bar .ph'), toks = root.querySelector('.fs-tokens');
+    var key = function (k) { return root.querySelector('[data-k="' + k + '"]'); };
+    var grp = function (g) { return root.querySelector('[data-g="' + g + '"]'); };
+    var text = 'Call the bank ~15m';
+    var step = function (n) { steps.forEach(function (s) { s.classList.toggle('on', +s.dataset.s === n); }); };
+    var setText = function (s) { typed.textContent = s; ph.style.display = s ? 'none' : ''; };
+    var tokens = function (on) {
+      toks.innerHTML = on ? '<span class="chip acc">Today</span><span class="chip">15 min</span>' : '';
+      toks.classList.toggle('on', on);
+    };
+    var reset = function () {
+      root.classList.remove('open', 'typing', 'added');
+      setText(''); tokens(false); step(0);
+      root.querySelectorAll('.key').forEach(function (k) { k.classList.remove('down'); });
+      root.querySelectorAll('.grp').forEach(function (g) { g.classList.remove('show'); });
+    };
+    if (reduce) {
+      root.classList.add('open', 'typing'); setText(text); tokens(true);
+      return;
+    }
+    var timers = [], running = false;
+    var at = function (ms, fn) { timers.push(setTimeout(fn, ms)); };
+    var run = function () {
+      reset();
+      at(400, function () { step(1); grp('a').classList.add('show'); });
+      at(900, function () { key('ctrl').classList.add('down'); });
+      at(1150, function () { key('shift').classList.add('down'); });
+      at(1400, function () { key('space').classList.add('down'); root.classList.add('open'); });
+      at(1750, function () { ['ctrl', 'shift', 'space'].forEach(function (k) { key(k).classList.remove('down'); }); });
+      at(2150, function () { grp('a').classList.remove('show'); step(2); root.classList.add('typing'); });
+      for (var i = 1; i <= text.length; i++) (function (i) { at(2250 + i * 72, function () { setText(text.slice(0, i)); }); })(i);
+      at(2250 + text.length * 72 + 150, function () { tokens(true); });
+      at(4300, function () { step(3); grp('b').classList.add('show'); });
+      at(4750, function () { key('enter').classList.add('down'); root.classList.add('added'); root.classList.remove('typing'); setText(''); tokens(false); });
+      at(5050, function () { key('enter').classList.remove('down'); });
+      at(5900, function () { grp('b').classList.remove('show'); step(4); grp('c').classList.add('show'); });
+      at(6350, function () { key('esc').classList.add('down'); root.classList.remove('open'); });
+      at(6650, function () { key('esc').classList.remove('down'); });
+      at(7500, function () { grp('c').classList.remove('show'); step(0); });
+      at(8600, function () { timers = []; if (running) run(); });
+    };
+    var start = function () { if (!running) { running = true; run(); } };
+    var stop = function () { running = false; timers.forEach(clearTimeout); timers = []; reset(); };
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) { es.forEach(function (e) { e.isIntersecting ? start() : stop(); }); }, { threshold: 0.35 }).observe(root.parentElement);
+    } else start();
+  });
+
   // ---- Reveal on scroll.
   if ('IntersectionObserver' in window && !reduce) {
     var io = new IntersectionObserver(function (es) {
