@@ -479,37 +479,11 @@ section { position: relative; }
 .rpk-days span { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 600; background: var(--hover); color: var(--text-2); }
 .rpk-days span.on { background: var(--accent); color: #fff; }
 
-/* ---- Desktop scene (hero) */
-.desk { width: 1440px; height: 860px; border-radius: 28px; overflow: hidden; position: relative; background: #0b0b14; box-shadow: 0 50px 120px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.09); }
-.desk .wall { position: absolute; inset: 0; background:
-  radial-gradient(1100px 620px at 15% 112%, #ff9a6b 0%, rgba(255, 154, 107, 0) 62%),
-  radial-gradient(900px 600px at 88% 100%, #b14fd1 0%, rgba(177, 79, 209, 0) 62%),
-  radial-gradient(1200px 700px at 50% -15%, #2c2e86 0%, rgba(44, 46, 134, 0) 70%),
-  linear-gradient(180deg, #121332 0%, #34286a 52%, #74407e 100%); }
-.desk .notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 3; }
-.desk .doc { position: absolute; left: 140px; top: 96px; width: 780px; height: 590px; border-radius: 14px; background: #fbfbfa; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45); overflow: hidden; }
-.desk .doc .bar { height: 40px; background: #efeee9; border-bottom: 1px solid rgba(0, 0, 0, 0.06); display: flex; align-items: center; gap: 8px; padding: 0 14px; font-size: 12.5px; color: #5f5d58; }
-.desk .doc .bar i { width: 10px; height: 10px; border-radius: 3px; background: #d8d6d0; }
-.desk .doc .bar span { margin-left: 10px; }
-.desk .doc .page { padding: 46px 76px; }
-.desk .doc .page h6 { margin: 0 0 8px; font-size: 28px; color: #1d1c1a; letter-spacing: -0.03em; }
-.desk .doc .page p { margin: 0 0 26px; font-size: 13px; color: #74726c; }
-.desk .doc .ln { height: 9px; border-radius: 5px; background: #e9e7e2; margin: 0 0 13px; }
-.desk .side { position: absolute; right: 110px; top: 170px; width: 430px; height: 480px; border-radius: 14px; background: rgba(24, 24, 28, 0.82); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45); padding: 22px; }
-.desk .side .ln { height: 9px; border-radius: 5px; background: rgba(255, 255, 255, 0.1); margin: 0 0 13px; }
-.desk .cbar { position: absolute; left: 50%; top: 150px; transform: translateX(-50%); z-index: 2; }
-.desk .tb { position: absolute; left: 0; right: 0; bottom: 0; height: 52px; background: rgba(26, 26, 30, 0.8); border-top: 1px solid rgba(255, 255, 255, 0.06); display: flex; align-items: center; justify-content: center; gap: 10px; }
-.desk .tb i { width: 30px; height: 30px; border-radius: 8px; background: rgba(255, 255, 255, 0.13); }
-.desk .tb i.a { background: rgba(255, 255, 255, 0.22); box-shadow: 0 6px 0 -4px #9fa0ff; }
-.desk .tray { position: absolute; right: 22px; bottom: 0; height: 52px; display: flex; align-items: center; gap: 18px; color: #f3f2ef; font-size: 12px; text-align: right; line-height: 1.3; }
-.desk .tray .tg { display: flex; align-items: center; gap: 3px; }
-.desk .tray .tg b { width: 5px; height: 5px; border-radius: 50%; background: #fff; opacity: 0.45; }
-.desk .tray .tg b:nth-child(2) { width: 8px; height: 8px; background: #8f90f5; opacity: 1; }
-
 /* ================================================================ PAGE BLOCKS */
 .hero { padding: 104px 0 40px; overflow: hidden; text-align: center; }
 .hero .scene { margin: 76px auto 0; max-width: 1280px; padding: 0 22px; position: relative; }
 .hero-glow { position: absolute; left: 50%; top: 360px; width: 1500px; height: 1000px; transform: translateX(-50%); background: radial-gradient(closest-side, rgba(90, 92, 230, 0.38), transparent); pointer-events: none; }
+.hero .fs-steps { text-align: left; }
 .hero .meaning { margin-top: 18px; font-size: 14px; color: var(--text-3); }
 
 .notch-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }

@@ -12,7 +12,7 @@
   <meta name="theme-color" content="#000000">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -49,42 +49,55 @@
   </div>
 
   <div class="scene reveal">
-    <div class="fit" data-w="1440" data-h="860" data-crop="760" role="img" aria-label="A Windows desktop with Nuqta's notch at the top of the screen showing the task in focus and a timer, and the Command bar open in the middle with today's tasks in time order.">
-      <div class="mock desk" aria-hidden="true">
-        <div class="wall"></div>
-        <div class="doc">
-          <div class="bar"><i></i><i></i><i></i><span>Quarterly report - Draft 3</span></div>
-          <div class="page">
-            <h6>Q3 report</h6>
-            <p>Draft for the team · 4 pages</p>
-            <div class="ln" style="width:92%"></div><div class="ln" style="width:86%"></div><div class="ln" style="width:95%"></div><div class="ln" style="width:58%"></div>
-            <div class="ln" style="width:0;margin-bottom:26px"></div>
-            <div class="ln" style="width:88%"></div><div class="ln" style="width:93%"></div><div class="ln" style="width:81%"></div><div class="ln" style="width:90%"></div><div class="ln" style="width:44%"></div>
-            <div class="ln" style="width:0;margin-bottom:26px"></div>
-            <div class="ln" style="width:91%"></div><div class="ln" style="width:85%"></div><div class="ln" style="width:70%"></div>
+    <div class="fit" data-w="1440" data-h="810" data-crop="780" role="img" aria-label="A Windows desktop with a soft wave wallpaper, the taskbar at the bottom and Nuqta's notch at the top. The keys Ctrl, Shift and Space are pressed, the Command bar appears, 'Call the bank ~15m' is typed with chips for Today and 15 minutes, Enter adds it to today's list, and Esc closes the bar.">
+      <div class="mock fs" aria-hidden="true" data-fs>
+        <img class="fs-wall" src="img/wallpaper.webp" alt="" width="2000" height="1250" decoding="async">
+        <div class="fs-tb">
+          <div class="tb-mid">
+            <span class="tb-ic"><span class="tb-start"><i></i><i></i><i></i><i></i></span></span>
+            <span class="tb-search"><svg width="15" height="15" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 10.5 14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Search</span>
+            <span class="tb-ic on"><svg width="26" height="26" viewBox="0 0 26 26"><path d="M3 7.5a2 2 0 0 1 2-2h5l2 2.2h9a2 2 0 0 1 2 2V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="#f4c542"/><path d="M3 10.5h20V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="#fbd767"/></svg></span>
+            <span class="tb-ic on"><span class="tb-app globe"></span></span>
+            <span class="tb-ic"><span class="tb-app term">&gt;_</span></span>
+            <span class="tb-ic"><span class="tb-app notes"></span></span>
+            <span class="tb-ic"><span class="tb-app music"></span></span>
+          </div>
+          <div class="tb-tray">
+            <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2.5 7.5 6 4l3.5 3.5" fill="none" stroke="#f3f2ef" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="tg" title="Nuqta"><b></b><b></b><b></b></span>
+            <svg width="17" height="17" viewBox="0 0 18 18"><path d="M2 7a10 10 0 0 1 14 0M4.5 9.6a6.4 6.4 0 0 1 9 0M7 12.2a2.8 2.8 0 0 1 4 0" fill="none" stroke="#f3f2ef" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="14.6" r="1.1" fill="#f3f2ef"/></svg>
+            <svg width="17" height="17" viewBox="0 0 18 18"><path d="M3 7h3l4-3v10l-4-3H3z" fill="#f3f2ef"/><path d="M12.5 6.5a3.5 3.5 0 0 1 0 5M14.5 4.5a6.5 6.5 0 0 1 0 9" fill="none" stroke="#f3f2ef" stroke-width="1.4" stroke-linecap="round"/></svg>
+            <svg width="20" height="17" viewBox="0 0 22 18"><rect x="1.5" y="4.5" width="16" height="9" rx="2.2" fill="none" stroke="#f3f2ef" stroke-width="1.4"/><rect x="3.5" y="6.5" width="10" height="5" rx="1" fill="#f3f2ef"/><rect x="18.5" y="7.5" width="1.6" height="3" rx=".8" fill="#f3f2ef"/></svg>
+            <span class="tb-clock">15:10<br>20.11.2026</span>
           </div>
         </div>
-        <div class="side"><div class="ln" style="width:40%"></div><div class="ln" style="width:80%"></div><div class="ln" style="width:65%"></div><div class="ln" style="width:72%"></div></div>
-        <div class="notch live">
-          <span class="nd"></span><span class="nt">Write the quarterly report</span><span class="ntime" data-timer="21:12">21:12</span>
-          <span class="nline"><i style="width:42%"></i></span>
-        </div>
-        <div class="cbar">
-          <div class="cb-in"><span class="adot"></span><span class="ph">Add to the queue, or pick what is next</span><span class="typed" data-typer></span><span class="caret"></span></div>
-          <div class="cb-tokens"></div>
+        <div class="notch live"><span class="nd"></span><span class="nt">Fix the sync bug</span><span class="ntime" data-timer="18:40">18:40</span><span class="nline"><i style="width:37%"></i></span></div>
+        <div class="cbar fs-bar">
+          <div class="cb-in"><span class="adot"></span><span class="ph">Add to the queue, or pick what is next</span><span class="typed fs-typed"></span><span class="caret"></span></div>
+          <div class="cb-tokens fs-tokens"></div>
           <div class="cb-line"></div>
-          <div class="cb-now"><span class="dot"></span>Write the quarterly report<span class="done">Done</span></div>
-          <div class="cb-row sel"><span class="tm">16:30</span><span class="ring"></span><span class="ttl">Prepare the workshop slides</span><span class="meta">· 1/3 steps</span><span class="chip">45m</span><span class="ent">↵</span></div>
+          <div class="cb-now"><span class="dot"></span>Fix the sync bug<span class="done">Done</span></div>
+          <div class="cb-row sel"><span class="tm">16:30</span><span class="ring"></span><span class="ttl">Prepare the workshop slides</span><span class="meta">· 1/3 steps</span><span class="chip">45m</span></div>
           <div class="cb-row ev"><span class="tm">17:00</span><span class="ebar"></span><span class="ttl">Team sync</span></div>
-          <div class="cb-row"><span class="tm">18:30</span><span class="ring"></span><span class="ttl">Gym</span><span data-rep></span><span class="chip">1h</span></div>
           <div class="cb-group">Any time</div>
           <div class="cb-row"><span class="tm"></span><span class="ring"></span><span class="ttl">Send invoice to client</span><span class="late">Thu 19</span><span class="chip">15m</span></div>
-          <div class="cb-foot"><span><b class="kbd">↑↓</b>Select</span><span><b class="kbd">↵</b>Start</span><span><b class="kbd">Ctrl ↵</b>Add and start</span><span><b class="kbd">Ctrl D</b>Done</span></div>
+          <div class="cb-row fs-new"><span class="tm"></span><span class="ring"></span><span class="ttl">Call the bank</span><span class="chip">15m</span></div>
+          <div class="cb-foot foot-idle"><span><b class="kbd">↑↓</b>Select</span><span><b class="kbd">↵</b>Start</span><span><b class="kbd">Ctrl ↵</b>Add and start</span><span><b class="kbd">Ctrl D</b>Done</span></div>
+          <div class="cb-foot foot-type"><span><b class="kbd">↵</b>Add</span><span><b class="kbd">Ctrl ↵</b>Add and start</span><span><b class="kbd">Tab</b>To Inbox</span></div>
         </div>
-        <div class="tb"><i></i><i></i><i class="a"></i><i></i><i></i></div>
-        <div class="tray"><span class="tg"><b></b><b></b><b></b></span><span>15:10<br>20.11.2026</span></div>
+        <div class="fs-keys">
+          <div class="grp" data-g="a"><span class="key" data-k="ctrl">Ctrl</span><span class="plus">+</span><span class="key" data-k="shift">Shift</span><span class="plus">+</span><span class="key wide" data-k="space">Space</span></div>
+          <div class="grp" data-g="b"><span class="key wide" data-k="enter">Enter ↵</span></div>
+          <div class="grp" data-g="c"><span class="key" data-k="esc">Esc</span></div>
+        </div>
       </div>
     </div>
+    <ol class="fs-steps">
+      <li data-s="1"><b>1</b>Press <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Space</kbd> from any app</li>
+      <li data-s="2"><b>2</b>Type the task - <kbd>~15m</kbd> adds a timebox</li>
+      <li data-s="3"><b>3</b><kbd>↵</kbd> adds it to today</li>
+      <li data-s="4"><b>4</b><kbd>Esc</kbd> - back to work</li>
+    </ol>
   </div>
 </section>
 
@@ -157,68 +170,6 @@
           <div class="cb-foot"><span><b class="kbd">↵</b>Add</span><span><b class="kbd">Ctrl ↵</b>Add and start</span><span><b class="kbd">Tab</b>To Inbox</span></div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ FULL SCREEN -->
-<section id="fullscreen" class="dark sec">
-  <div class="wide">
-    <div class="sec-head reveal">
-      <p class="eyebrow">From anywhere</p>
-      <h2 class="h-xl">A thought comes.<br><span class="muted">Catch it in two seconds.</span></h2>
-      <p class="lead">On the desktop, in a browser, an editor or a full-screen app - press the shortcut and the Command bar is on top in about 25 milliseconds. Type, press Enter, press Esc - and you never left what you were doing.</p>
-    </div>
-    <div class="reveal">
-      <div class="fit" data-w="1440" data-h="810" data-crop="780" role="img" aria-label="A Windows desktop with a soft wave wallpaper, the taskbar at the bottom and Nuqta's notch at the top. The keys Ctrl, Shift and Space are pressed, the Command bar appears, 'Call the bank ~15m' is typed with chips for Today and 15 minutes, Enter adds it to today's list, and Esc closes the bar.">
-        <div class="mock fs" aria-hidden="true" data-fs>
-          <img class="fs-wall" src="img/wallpaper.webp" alt="" width="2000" height="1250" decoding="async">
-          <div class="fs-tb">
-            <div class="tb-mid">
-              <span class="tb-ic"><span class="tb-start"><i></i><i></i><i></i><i></i></span></span>
-              <span class="tb-search"><svg width="15" height="15" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 10.5 14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Search</span>
-              <span class="tb-ic on"><svg width="26" height="26" viewBox="0 0 26 26"><path d="M3 7.5a2 2 0 0 1 2-2h5l2 2.2h9a2 2 0 0 1 2 2V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="#f4c542"/><path d="M3 10.5h20V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="#fbd767"/></svg></span>
-              <span class="tb-ic on"><span class="tb-app globe"></span></span>
-              <span class="tb-ic"><span class="tb-app term">&gt;_</span></span>
-              <span class="tb-ic"><span class="tb-app notes"></span></span>
-              <span class="tb-ic"><span class="tb-app music"></span></span>
-            </div>
-            <div class="tb-tray">
-              <svg width="12" height="12" viewBox="0 0 12 12"><path d="M2.5 7.5 6 4l3.5 3.5" fill="none" stroke="#f3f2ef" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span class="tg" title="Nuqta"><b></b><b></b><b></b></span>
-              <svg width="17" height="17" viewBox="0 0 18 18"><path d="M2 7a10 10 0 0 1 14 0M4.5 9.6a6.4 6.4 0 0 1 9 0M7 12.2a2.8 2.8 0 0 1 4 0" fill="none" stroke="#f3f2ef" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="14.6" r="1.1" fill="#f3f2ef"/></svg>
-              <svg width="17" height="17" viewBox="0 0 18 18"><path d="M3 7h3l4-3v10l-4-3H3z" fill="#f3f2ef"/><path d="M12.5 6.5a3.5 3.5 0 0 1 0 5M14.5 4.5a6.5 6.5 0 0 1 0 9" fill="none" stroke="#f3f2ef" stroke-width="1.4" stroke-linecap="round"/></svg>
-              <svg width="20" height="17" viewBox="0 0 22 18"><rect x="1.5" y="4.5" width="16" height="9" rx="2.2" fill="none" stroke="#f3f2ef" stroke-width="1.4"/><rect x="3.5" y="6.5" width="10" height="5" rx="1" fill="#f3f2ef"/><rect x="18.5" y="7.5" width="1.6" height="3" rx=".8" fill="#f3f2ef"/></svg>
-              <span class="tb-clock">15:10<br>20.11.2026</span>
-            </div>
-          </div>
-          <div class="notch live"><span class="nd"></span><span class="nt">Fix the sync bug</span><span class="ntime" data-timer="18:40">18:40</span><span class="nline"><i style="width:37%"></i></span></div>
-          <div class="cbar fs-bar">
-            <div class="cb-in"><span class="adot"></span><span class="ph">Add to the queue, or pick what is next</span><span class="typed fs-typed"></span><span class="caret"></span></div>
-            <div class="cb-tokens fs-tokens"></div>
-            <div class="cb-line"></div>
-            <div class="cb-now"><span class="dot"></span>Fix the sync bug<span class="done">Done</span></div>
-            <div class="cb-row sel"><span class="tm">16:30</span><span class="ring"></span><span class="ttl">Prepare the workshop slides</span><span class="meta">· 1/3 steps</span><span class="chip">45m</span></div>
-            <div class="cb-row ev"><span class="tm">17:00</span><span class="ebar"></span><span class="ttl">Team sync</span></div>
-            <div class="cb-group">Any time</div>
-            <div class="cb-row"><span class="tm"></span><span class="ring"></span><span class="ttl">Send invoice to client</span><span class="late">Thu 19</span><span class="chip">15m</span></div>
-            <div class="cb-row fs-new"><span class="tm"></span><span class="ring"></span><span class="ttl">Call the bank</span><span class="chip">15m</span></div>
-            <div class="cb-foot foot-idle"><span><b class="kbd">↑↓</b>Select</span><span><b class="kbd">↵</b>Start</span><span><b class="kbd">Ctrl ↵</b>Add and start</span><span><b class="kbd">Ctrl D</b>Done</span></div>
-            <div class="cb-foot foot-type"><span><b class="kbd">↵</b>Add</span><span><b class="kbd">Ctrl ↵</b>Add and start</span><span><b class="kbd">Tab</b>To Inbox</span></div>
-          </div>
-          <div class="fs-keys">
-            <div class="grp" data-g="a"><span class="key" data-k="ctrl">Ctrl</span><span class="plus">+</span><span class="key" data-k="shift">Shift</span><span class="plus">+</span><span class="key wide" data-k="space">Space</span></div>
-            <div class="grp" data-g="b"><span class="key wide" data-k="enter">Enter ↵</span></div>
-            <div class="grp" data-g="c"><span class="key" data-k="esc">Esc</span></div>
-          </div>
-        </div>
-      </div>
-      <ol class="fs-steps">
-        <li data-s="1"><b>1</b>Press <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>Space</kbd> from any app</li>
-        <li data-s="2"><b>2</b>Type the task - <kbd>~15m</kbd> adds a timebox</li>
-        <li data-s="3"><b>3</b><kbd>↵</kbd> adds it to today</li>
-        <li data-s="4"><b>4</b><kbd>Esc</kbd> - back to work</li>
-      </ol>
     </div>
   </div>
 </section>
@@ -687,6 +638,6 @@
   </div>
 </footer>
 
-<script src="app.js?v=5"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>

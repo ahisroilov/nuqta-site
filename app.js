@@ -138,39 +138,6 @@
     }, 1000);
   });
 
-  // ---- Hero Command bar: types real Nuqta phrases and shows the live tokens.
-  var typed = document.querySelector('[data-typer]');
-  if (typed) {
-    var ph = document.querySelector('.cb-in .ph');
-    var toks = document.querySelector('.cb-tokens');
-    var phrases = [
-      { text: 'Review the pull request ~45m', tokens: '<span class="chip acc">Today</span><span class="chip">45 min</span>' },
-      { text: 'Gym ~60m every mon wed fri', tokens: '<span class="chip">1h</span><span class="chip acc">' + REP + ' Mon Wed Fri</span>' },
-      { text: 'Call the bank', tokens: '<span class="chip">Inbox</span><span class="hint">Try "~45m" or "every mon"</span>' }
-    ];
-    var pi = 0;
-    var show = function (txt) {
-      typed.textContent = txt;
-      ph.style.display = txt ? 'none' : '';
-    };
-    var run = function () {
-      var p = phrases[pi % phrases.length], i = 0;
-      toks.classList.remove('on'); toks.innerHTML = '';
-      var step = function () {
-        i += 1;
-        show(p.text.slice(0, i));
-        if (i < p.text.length) setTimeout(step, 55 + Math.random() * 60);
-        else {
-          toks.innerHTML = p.tokens; toks.classList.add('on');
-          setTimeout(function () { show(''); toks.classList.remove('on'); pi += 1; setTimeout(run, 900); }, 2600);
-        }
-      };
-      setTimeout(step, 500);
-    };
-    if (reduce) { show(phrases[0].text); toks.innerHTML = phrases[0].tokens; toks.classList.add('on'); }
-    else run();
-  }
-
   // ---- "From anywhere" demo: shortcut → Command bar → type → Enter → Esc, looped
   // while on screen (a still frame with reduced motion).
   document.querySelectorAll('[data-fs]').forEach(function (root) {
@@ -220,7 +187,7 @@
     var start = function () { if (!running) { running = true; run(); } };
     var stop = function () { running = false; timers.forEach(clearTimeout); timers = []; reset(); };
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (es) { es.forEach(function (e) { e.isIntersecting ? start() : stop(); }); }, { threshold: 0.35 }).observe(root.parentElement);
+      new IntersectionObserver(function (es) { es.forEach(function (e) { e.isIntersecting ? start() : stop(); }); }, { threshold: 0.15 }).observe(root.parentElement);
     } else start();
   });
 
