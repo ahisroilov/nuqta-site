@@ -27,7 +27,7 @@
   }
 
   // ---- Repeat glyph (the app draws ↻ itself; Geist has none).
-  var REP = '<svg class="rp" viewBox="0 0 16 16" aria-hidden="true"><path d="M13 6.5A5.2 5.2 0 0 0 3.6 4.6M3 9.5a5.2 5.2 0 0 0 9.4 1.9"/><path d="M3.2 2.2v2.7h2.7M12.8 13.8v-2.7h-2.7"/></svg>';
+  var REP = '<svg class="rp" width="12" height="12" viewBox="0 0 16 16" aria-hidden="true"><path d="M13 6.5A5.2 5.2 0 0 0 3.6 4.6M3 9.5a5.2 5.2 0 0 0 9.4 1.9"/><path d="M3.2 2.2v2.7h2.7M12.8 13.8v-2.7h-2.7"/></svg>';
   document.querySelectorAll('[data-rep]').forEach(function (e) { e.insertAdjacentHTML('afterbegin', REP); });
 
   // ---- Week view: the hub's 24h grid from 07:30, 44px per hour.
