@@ -146,8 +146,31 @@ kbd, .kbd { display: inline-flex; align-items: center; justify-content: center; 
 .nav-links { display: flex; align-items: center; gap: 24px; margin-left: auto; }
 .nav-links a { color: var(--text-2); font-size: 13.5px; font-weight: 500; }
 .nav-links a:hover { color: var(--text); text-decoration: none; }
-.nav-links a.nav-buy { font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 999px; background: var(--accent); color: var(--on-accent); }
-.nav-links a.nav-buy:hover { filter: brightness(1.08); color: var(--on-accent); }
+.nav-links a.nav-buy {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid #fff;
+  border-radius: 9px;
+  background: linear-gradient(180deg, #fff, #e4e2f1);
+  box-shadow: 0 2px 5px #0002, 0 0 0 1px #847ba049;
+  color: #1b1728;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: box-shadow .18s ease, background .18s ease;
+}
+.nav-buy span { color: #514578; font-size: 14px; line-height: 1; }
+.nav-links a.nav-buy:hover {
+  background: #fff;
+  box-shadow: 0 3px 10px #0003, 0 0 0 1px #847ba075;
+  color: #1b1728;
+}
+.nav-links a.nav-buy:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 3px;
+}
 
 /* ---------------------------------------------------------------- type */
 .eyebrow { font-size: 15px; font-weight: 600; color: var(--accent-text); margin: 0 0 14px; letter-spacing: -0.005em; }
