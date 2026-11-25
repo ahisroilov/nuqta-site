@@ -149,7 +149,7 @@ kbd, .kbd { display: inline-flex; align-items: center; justify-content: center; 
 .nav-links a.nav-buy {
   display: inline-flex;
   align-items: center;
-  min-height: 36px;
+  min-height: 30px;
   padding: 0 14px;
   border-radius: 999px;
   background: var(--text);
