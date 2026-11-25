@@ -1,4 +1,4 @@
-// Nuqta site: scaled illustrations, scroll reveals and the small live bits
+// Motif site: scaled illustrations, scroll reveals and the small live bits
 // (hero Command bar typing, notch timer). No libraries.
 (function () {
   'use strict';
