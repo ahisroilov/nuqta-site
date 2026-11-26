@@ -32,17 +32,18 @@
 
   // ---- Week view: the hub's 24h grid from 07:30, 44px per hour.
   function week(el) {
-    var H = 44, from = 7.5, colW = (el.clientWidth || 704) - 62;
-    colW = colW / 7;
+    var H = 44, from = 7.5, colW = 100 / 7, now = (15 + 10 / 60 - from) * H;
     var days = [['MON', 16, '3h 10m'], ['TUE', 17, '2h 40m'], ['WED', 18, '2h 25m'], ['THU', 19, '3h 05m'], ['FRI', 20, '1h 01m'], ['SAT', 21, ''], ['SUN', 22, '']];
     var head = '', cols = '', hrs = '', hours = '';
     days.forEach(function (d, i) {
       head += '<div class="' + (i === 4 ? 'today' : '') + '">' + d[0] + '<b>' + d[1] + '</b><small>' + d[2] + '</small></div>';
-      cols += '<div class="col' + (i === 4 ? ' today' : '') + '" style="left:' + (i * colW) + 'px;width:' + colW + 'px"></div>';
+      cols += '<div class="col' + (i === 4 ? ' today' : '') + '" style="left:' + (i * colW) + '%;width:' + colW + '%"></div>';
     });
     for (var h = 8; h <= 20; h++) {
-      hrs += '<div class="hr" style="top:' + (h - from) * H + 'px"></div>';
-      hours += '<span style="top:' + (h - from) * H + 'px">' + (h < 10 ? '0' : '') + h + ':00</span>';
+      var hourTop = (h - from) * H;
+      var nearNow = Math.abs(hourTop - now) < 18 ? ' class="near-now"' : '';
+      hrs += '<div class="hr" style="top:' + hourTop + 'px"></div>';
+      hours += '<span' + nearNow + ' style="top:' + hourTop + 'px">' + (h < 10 ? '0' : '') + h + ':00</span>';
     }
     // [day, start, end, kind, title, time line]
     var B = [
@@ -60,10 +61,9 @@
       var top = (b[1] - from) * H + 1, ht = Math.max(24, (b[2] - b[1]) * H - 3);
       var t = (b[3].indexOf('rep') > -1 ? REP + ' ' : '') + b[4];
       var sub = b[5] && ht >= 56 ? '<small>' + b[5] + '</small>' : '';
-      blocks += '<div class="blk ' + b[3] + '" style="left:' + (b[0] * colW + 3) + 'px;top:' + top + 'px;width:' + (colW - 6) + 'px;height:' + ht + 'px">' + t + sub + '</div>';
+      blocks += '<div class="blk ' + b[3] + '" style="left:calc(' + (b[0] * colW) + '% + 3px);top:' + top + 'px;width:calc(' + colW + '% - 6px);height:' + ht + 'px">' + t + sub + '</div>';
     });
-    var now = (15.17 - from) * H;
-    blocks += '<div class="nowl" style="left:' + (4 * colW) + 'px;width:' + colW + 'px;top:' + now + 'px"></div>';
+    blocks += '<div class="nowl" style="left:' + (4 * colW) + '%;width:' + colW + '%;top:' + now + 'px"></div>';
     el.innerHTML = '<div class="cal-head">' + head + '</div><div class="cal-hours">' + hours + '<b class="nowpill" style="top:' + now + 'px">15:10</b></div><div class="cal-grid">' + cols + hrs + blocks + '</div>';
   }
   document.querySelectorAll('[data-week]').forEach(week);
